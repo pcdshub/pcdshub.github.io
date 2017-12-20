@@ -74,7 +74,10 @@ Once you are happy with your code, ``push`` it back to your fork on GitHub.
 
 You should now be able to create a Pull Request back to the original
 repository. **You should never commit directly back to the original
-repository**. The Pull Request process accomplishes two things:
+repository**. In fact, if you are creating a new repository it is possible to
+strictly disallow this by explicitly protecting certain branches from direct
+commits.The reason we feel strongly that Pull Requests are necessary because
+they:
 
 1) Allows other collaborators to view the changes you made, and give feedback.
 2) Leave an easily understood explanation to why these changes are necessary.
