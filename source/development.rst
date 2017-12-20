@@ -18,7 +18,7 @@ created, you can clone into your own workspace.
 
 .. code:: sh
 
-   $ git clone https://github.com/YOUR-USERNAME/REPOSITORY.git
+   $ git clone https://YOUR-USERNAME@github.com/YOUR-USERNAME/REPOSITORY.git
 
 Now, that we have a copy of the repository create a branch for the feature or
 bug you would like to work on.
