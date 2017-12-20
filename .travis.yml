@@ -10,11 +10,11 @@ install:
 
 script:
   - |
-    if [[ -n "$DOCTR_DEPLOY_ENCRYPTION_KEY" ]]; then
+    if [[ "${TRAVIS_BRANCH}" == "source" ]]; then
       # Install doctr 
       pip install doctr
       # Create HTML documentation  
       make html
       #Publish docs.
-      doctr deploy . --built-docs build/html --deploy-branch-name gh-pages
+      doctr deploy . --no-require-master --built-docs build/html --deploy-branch-name master
     fi
