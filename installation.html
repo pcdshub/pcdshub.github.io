@@ -1,0 +1,289 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Installation &mdash; PCDS  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="PCDS  documentation" href="index.html"/>
+        <link rel="next" title="Development" href="development.html"/>
+        <link rel="prev" title="PCDS" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> PCDS
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#using-an-existing-environment">Using an Existing Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-your-own-environment">Creating Your Own Environment</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Recommended Resources</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/slaclab">SLAC-wide GitHub</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pcdshub">PCDS GitHub</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PCDS</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Installation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/installation.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<p>PCDS uses Conda to manage Python packaging. This allows users to quickly
+assemble virtual environments with different combinations of packages. An
+elementary understanding of what Conda is, and how to use it is assumed in the
+tutorial below. If you need a refresher, <a class="reference external" href="https://conda.io/docs/user-guide/getting-started.html">here</a> is a good place to start.</p>
+<div class="section" id="using-an-existing-environment">
+<h2>Using an Existing Environment<a class="headerlink" href="#using-an-existing-environment" title="Permalink to this headline">¶</a></h2>
+<p>A Conda deployment is maintained in <code class="docutils literal"><span class="pre">/reg/g/pcds/pyps/conda</span></code> with different
+versions of the <code class="docutils literal"><span class="pre">pcds</span></code> environment. Activate the latest one by:</p>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span>$ source /reg/g/pcds/pyps/conda/py36env.sh
+</pre></div>
+</div>
+<p>If you want an older release, enter this as an argument to the shell script.
+The environment contained is <strong>read-only</strong>. You should not try and add packages
+to these environments. If you believe that a package should be included that is
+not present, contact PCDS and we will include it a subsequent release.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Do not create your own environments here. See the instructions below to
+create your own environment if you want to try different packages</p>
+</div>
+</div>
+<div class="section" id="creating-your-own-environment">
+<h2>Creating Your Own Environment<a class="headerlink" href="#creating-your-own-environment" title="Permalink to this headline">¶</a></h2>
+<p>Many developers may want to create their own environments to experiment with
+different packages and tools. We recommend that you do this in your own
+Miniconda installation. From a machine with internet access:</p>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span>$ wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
+
+$ bash miniconda.sh -b -p $HOME/miniconda
+</pre></div>
+</div>
+<p>This will give you a clean installation of Conda for you to play around with.
+Feel free to create and name environments as you please.  You may want to
+prepend the Conda installation location to your <code class="docutils literal"><span class="pre">PATH</span></code>. The following should
+go in your <code class="docutils literal"><span class="pre">.bashrc</span></code></p>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span>$ export PATH=/reg/neh/home/trendahl/miniconda/bin:$PATH
+</pre></div>
+</div>
+<p>If you want to create a copy of the latest PCDS deployment environment the
+easiest way is to use the <code class="docutils literal"><span class="pre">.yaml</span></code> specification that we keep with the main
+Conda deployment.</p>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span>$ conda env create -n myenvname -f /reg/g/pcds/pyps/conda/pcds-envs/pcds.yaml
+</pre></div>
+</div>
+<p>This will create an environment <code class="docutils literal"><span class="pre">myenvname</span></code> that is an exact copy of the
+deployment environment in your own Conda installation.</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="development.html" class="btn btn-neutral float-right" title="Development" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="PCDS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, SLAC National Accelarator Laboratory.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
