@@ -1,0 +1,20 @@
+language: python
+python:
+    - 3.6
+env:
+   global:
+     - secure: "pvs66t9E965F4xUG2Nm+QCh+1rDcqNOLfEVJR15Jy8TcyOUu5wFrmpFGzNBcqFyRsW433L3N3eCLAfQN+otVVk+BmwilPM+HiNfYIxb8Sc5pERYY7h/YoBv+u6g7p2eDi0RBzG7YVaMkxyzeODRSxWsrbrPd/LnSXTLpOSJkl/5fHbqwFo4YpznYLRQE/HekOgHvgBys5NGgVo84Lnx2Ly+JuFi+C0/7D7zBXoyRDKrNqDxkA90eRba6i2piUDHvUD0GxvR7kQgqaSi7DNY7rWGK6L8mjNmOV8vGgoFwDvpoUH3J2/f60SnVicpKwXXO0Y3axw+JceOVLNtsaoDxlRpTbJi6onDsYHebtipEAe/To/YO5hgdvT1Oqyv+qDbg5We19HAwj5O5Fa1frR7+PMRNpaR3S5M+kKBFt06bVosxIMuKw6/7nMd+CQFfHCXQIAupdOfU2pXrEXxijfFOe7ml85TPK7NN3eZl/9SfjP7FOV0ABzXTXC2XboQcIL7f2PQ36CFVnxo9sabA2AZKTlNmbzpqaErLAnQN80tgcqx+gjAUxMwZWaH2Y0MG88+Tu77yNbNAVzciXvaqRNgiFhmnxehS4f0GOKgJxFjO9AmIpouwXMBcqVtj3bYORzx2IFFbZZ78zrOw40PXFKcmmSqkx1prp0sgo5N6lMEMA4w="
+
+install:
+  - pip install -r requirements.txt
+
+script:
+  - |
+    if [[ -n "$DOCTR_DEPLOY_ENCRYPTION_KEY" ]]; then
+      # Install doctr 
+      pip install doctr
+      # Create HTML documentation  
+      make html
+      #Publish docs.
+      doctr deploy . --built-docs build/html --deploy-branch-name gh-pages
+    fi
