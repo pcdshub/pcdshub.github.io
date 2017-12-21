@@ -10,7 +10,7 @@ install:
 
 script:
   - |
-    if [[ "${TRAVIS_BRANCH}" == "source" ]]; then
+    if [[ -n "$DOCTR_DEPLOY_ENCRYPTION_KEY" && $TRAVIS_BRANCH == "source" ]]; then
       # Install doctr 
       pip install doctr
       # Create HTML documentation  
