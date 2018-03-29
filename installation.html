@@ -171,9 +171,9 @@ elementary understanding of what Conda is, and how to use it is assumed in the
 tutorial below. If you need a refresher, <a class="reference external" href="https://conda.io/docs/user-guide/getting-started.html">here</a> is a good place to start.</p>
 <div class="section" id="using-an-existing-environment">
 <h2>Using an Existing Environment<a class="headerlink" href="#using-an-existing-environment" title="Permalink to this headline">¶</a></h2>
-<p>A Conda deployment is maintained in <code class="docutils literal"><span class="pre">/reg/g/pcds/pyps/conda</span></code> with different
-versions of the <code class="docutils literal"><span class="pre">pcds</span></code> environment. Activate the latest one by:</p>
-<div class="code bash highlight-default"><div class="highlight"><pre><span></span>$ source /reg/g/pcds/pyps/conda/py36env.sh
+<p>A Conda deployment is maintained in <code class="docutils literal notranslate"><span class="pre">/reg/g/pcds/pyps/conda</span></code> with different
+versions of the <code class="docutils literal notranslate"><span class="pre">pcds</span></code> environment. Activate the latest one by:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ source /reg/g/pcds/pyps/conda/py36env.sh
 </pre></div>
 </div>
 <p>If you want an older release, enter this as an argument to the shell script.
@@ -191,25 +191,25 @@ create your own environment if you want to try different packages</p>
 <p>Many developers may want to create their own environments to experiment with
 different packages and tools. We recommend that you do this in your own
 Miniconda installation. From a machine with internet access:</p>
-<div class="code bash highlight-default"><div class="highlight"><pre><span></span>$ wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
 
 $ bash miniconda.sh -b -p $HOME/miniconda
 </pre></div>
 </div>
 <p>This will give you a clean installation of Conda for you to play around with.
 Feel free to create and name environments as you please.  You may want to
-prepend the Conda installation location to your <code class="docutils literal"><span class="pre">PATH</span></code>. The following should
-go in your <code class="docutils literal"><span class="pre">.bashrc</span></code></p>
-<div class="code bash highlight-default"><div class="highlight"><pre><span></span>$ export PATH=/reg/neh/home/trendahl/miniconda/bin:$PATH
+prepend the Conda installation location to your <code class="docutils literal notranslate"><span class="pre">PATH</span></code>. The following should
+go in your <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code></p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ export PATH=$HOME/miniconda/bin:$PATH
 </pre></div>
 </div>
 <p>If you want to create a copy of the latest PCDS deployment environment the
-easiest way is to use the <code class="docutils literal"><span class="pre">.yaml</span></code> specification that we keep with the main
+easiest way is to use the <code class="docutils literal notranslate"><span class="pre">.yaml</span></code> specification that we keep with the main
 Conda deployment.</p>
-<div class="code bash highlight-default"><div class="highlight"><pre><span></span>$ conda env create -n myenvname -f /reg/g/pcds/pyps/conda/pcds-envs/pcds.yaml
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ conda env create -n myenvname -f /reg/g/pcds/pyps/conda/pcds-envs/pcds.yaml
 </pre></div>
 </div>
-<p>This will create an environment <code class="docutils literal"><span class="pre">myenvname</span></code> that is an exact copy of the
+<p>This will create an environment <code class="docutils literal notranslate"><span class="pre">myenvname</span></code> that is an exact copy of the
 deployment environment in your own Conda installation.</p>
 </div>
 </div>

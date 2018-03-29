@@ -179,12 +179,12 @@ main repository. It also assures that the main repository is only added to by
 Pull Request and review. Repositories can be forked from the GitHub site like
 <a class="reference external" href="https://help.github.com/articles/fork-a-repo">this</a>. Once this repository is
 created, you can clone into your own workspace.</p>
-<div class="code sh highlight-default"><div class="highlight"><pre><span></span>$ git clone https://YOUR-USERNAME@github.com/YOUR-USERNAME/REPOSITORY.git
+<div class="code sh highlight-default notranslate"><div class="highlight"><pre><span></span>$ git clone https://YOUR-USERNAME@github.com/YOUR-USERNAME/REPOSITORY.git
 </pre></div>
 </div>
 <p>Now, that we have a copy of the repository create a branch for the feature or
 bug you would like to work on.</p>
-<div class="code sh highlight-default"><div class="highlight"><pre><span></span>$ git checkout -b my-feature
+<div class="code sh highlight-default notranslate"><div class="highlight"><pre><span></span>$ git checkout -b my-feature
 
 $ git status
 On branch my-feature
@@ -258,8 +258,8 @@ should follow the form described in the <a class="reference external" href="http
 </div>
 <div class="section" id="merging-changes">
 <h2>Merging Changes<a class="headerlink" href="#merging-changes" title="Permalink to this headline">¶</a></h2>
-<p>Once you are happy with your code, <code class="docutils literal"><span class="pre">push</span></code> it back to your fork on GitHub.</p>
-<div class="code sh highlight-default"><div class="highlight"><pre><span></span>$ git push origin my-feature
+<p>Once you are happy with your code, <code class="docutils literal notranslate"><span class="pre">push</span></code> it back to your fork on GitHub.</p>
+<div class="code sh highlight-default notranslate"><div class="highlight"><pre><span></span>$ git push origin my-feature
 </pre></div>
 </div>
 <p>You should now be able to create a Pull Request back to the original
@@ -281,7 +281,7 @@ Pull Request can be merged.</p>
 update your local checkout to reflect those. The first step is to make your
 local checkout aware of the upstream repository. If this is done correctly, you
 should see something like this:</p>
-<div class="code sh highlight-default"><div class="highlight"><pre><span></span>$ git remote add upstream https://github.com/UPSTREAM-ORG/REPOSITORY.git
+<div class="code sh highlight-default notranslate"><div class="highlight"><pre><span></span>$ git remote add upstream https://github.com/UPSTREAM-ORG/REPOSITORY.git
 $ git remote -v
 origin   https://github.com/YOUR-USERNAME/REPOSITORY.git (fetch)
 origin   https://github.com/YOUR-USERNAME/REPOSITORY.git (push)
@@ -289,28 +289,28 @@ upstream https://github.com/UPSTREAM-ORG/REPOSITORY.git (fetch)
 upstream https://github.com/UPSTREAM-ORG/REPOSITORY.git (push)
 </pre></div>
 </div>
-<p>Now, we need to fetch any changes from the upstream repository. <code class="docutils literal"><span class="pre">git</span> <span class="pre">fetch</span></code>
+<p>Now, we need to fetch any changes from the upstream repository. <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">fetch</span></code>
 will grab the latest commits that were merged since we made our own fork</p>
-<div class="code sh highlight-default"><div class="highlight"><pre><span></span>$ git fetch upstream
+<div class="code sh highlight-default notranslate"><div class="highlight"><pre><span></span>$ git fetch upstream
 </pre></div>
 </div>
-<p>Ideally you haven’t made any changes to your <code class="docutils literal"><span class="pre">master</span></code> branch. So you should be
-able to merge the latest <code class="docutils literal"><span class="pre">master</span></code> branch from the upstream repository without
-concern. All you need to do is to switch to your <code class="docutils literal"><span class="pre">master</span></code> branch, and pull in
+<p>Ideally you haven’t made any changes to your <code class="docutils literal notranslate"><span class="pre">master</span></code> branch. So you should be
+able to merge the latest <code class="docutils literal notranslate"><span class="pre">master</span></code> branch from the upstream repository without
+concern. All you need to do is to switch to your <code class="docutils literal notranslate"><span class="pre">master</span></code> branch, and pull in
 the changes from the upstream remote. It is usually a good idea to push any
 changes back to your fork as well.</p>
-<div class="code sh highlight-default"><div class="highlight"><pre><span></span>$ git checkout master
+<div class="code sh highlight-default notranslate"><div class="highlight"><pre><span></span>$ git checkout master
 $ git pull upstream master
 $ git push origin master
 </pre></div>
 </div>
 <p>Finally, we need to update our feature-branch to have the new changes. Here we
-use a <code class="docutils literal"><span class="pre">git</span> <span class="pre">rebase</span></code> to take our local changes, remove them temporarily, pull
+use a <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rebase</span></code> to take our local changes, remove them temporarily, pull
 the upstream changes into our branch, and then re-add our local changes on the
 tip of the commit history. This avoids extraneous merge commits that clog the
 commit history of the branch. A more in-depth discussion can be found <a class="reference external" href="https://www.atlassian.com/git/tutorials/merging-vs-rebasing">here</a>. This process
 should look like this:</p>
-<div class="code sh highlight-default"><div class="highlight"><pre><span></span>$ git checkout my-feature
+<div class="code sh highlight-default notranslate"><div class="highlight"><pre><span></span>$ git checkout my-feature
 $ git rebase upstream/master
 </pre></div>
 </div>

@@ -45,7 +45,7 @@ go in your ``.bashrc``
 
 .. code:: bash
 
-   $ export PATH=/reg/neh/home/trendahl/miniconda/bin:$PATH
+   $ export PATH=$HOME/miniconda/bin:$PATH
 
 If you want to create a copy of the latest PCDS deployment environment the
 easiest way is to use the ``.yaml`` specification that we keep with the main
