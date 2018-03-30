@@ -36,16 +36,22 @@ Miniconda installation. From a machine with internet access:
 
    $ wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
   
-   $ bash miniconda.sh -b -p $HOME/miniconda
+   $ bash miniconda.sh -b -p ~/miniconda
 
 This will give you a clean installation of Conda for you to play around with.
-Feel free to create and name environments as you please.  You may want to
-prepend the Conda installation location to your ``PATH``. The following should
-go in your ``.bashrc``
+Feel free to create and name environments as you please. You can make
+conda ready to use by sourcing the following scripts. You may want to
+include this in your ``.bashrc`` or startup file equivalent:
 
 .. code:: bash
 
-   $ export PATH=$HOME/miniconda/bin:$PATH
+   $ source ~/miniconda/etc/profile.d/conda.sh
+
+or, for tcsh:
+
+.. code:: tcsh
+
+   $ source ~/miniconda/etc/profile.d/conda.csh
 
 If you want to create a copy of the latest PCDS deployment environment the
 easiest way is to use the ``.yaml`` specification that we keep with the main
@@ -57,3 +63,10 @@ Conda deployment.
 
 This will create an environment ``myenvname`` that is an exact copy of the
 deployment environment in your own Conda installation.
+
+You can activate or deactivate an environment with the following commands:
+
+.. code:: bash
+
+   $ conda activate myenvname
+   $ conda deactivate

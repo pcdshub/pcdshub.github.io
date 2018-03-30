@@ -193,14 +193,18 @@ different packages and tools. We recommend that you do this in your own
 Miniconda installation. From a machine with internet access:</p>
 <div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
 
-$ bash miniconda.sh -b -p $HOME/miniconda
+$ bash miniconda.sh -b -p ~/miniconda
 </pre></div>
 </div>
 <p>This will give you a clean installation of Conda for you to play around with.
-Feel free to create and name environments as you please.  You may want to
-prepend the Conda installation location to your <code class="docutils literal notranslate"><span class="pre">PATH</span></code>. The following should
-go in your <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code></p>
-<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ export PATH=$HOME/miniconda/bin:$PATH
+Feel free to create and name environments as you please. You can make
+conda ready to use by sourcing the following scripts. You may want to
+include this in your <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> or startup file equivalent:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ source ~/miniconda/etc/profile.d/conda.sh
+</pre></div>
+</div>
+<p>or, for tcsh:</p>
+<div class="code tcsh highlight-default notranslate"><div class="highlight"><pre><span></span>$ source ~/miniconda/etc/profile.d/conda.csh
 </pre></div>
 </div>
 <p>If you want to create a copy of the latest PCDS deployment environment the
@@ -211,6 +215,11 @@ Conda deployment.</p>
 </div>
 <p>This will create an environment <code class="docutils literal notranslate"><span class="pre">myenvname</span></code> that is an exact copy of the
 deployment environment in your own Conda installation.</p>
+<p>You can activate or deactivate an environment with the following commands:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ conda activate myenvname
+$ conda deactivate
+</pre></div>
+</div>
 </div>
 </div>
 
