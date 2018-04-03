@@ -16,6 +16,7 @@ to PCDS directly.
 
    installation.rst
    development.rst
+   faq.rst
    resources.rst
 
 .. toctree::
