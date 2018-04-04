@@ -1,5 +1,6 @@
 ./_images/proxy.png
 ./_sources/development.rst.txt
+./_sources/faq.rst.txt
 ./_sources/index.rst.txt
 ./_sources/installation.rst.txt
 ./_sources/resources.rst.txt
@@ -40,6 +41,7 @@
 ./_static/up.png
 ./_static/websupport.js
 ./development.html
+./faq.html
 ./genindex.html
 ./index.html
 ./installation.html
