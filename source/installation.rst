@@ -41,8 +41,9 @@ on your path, or by cloning the github repository.
 You can also use these scripts as a starting point for your own.
 The relevant scripts are:
 
-- ``pydev_env``: Source this to activate your development environment
-- ``pydev_register``: Use this to set up your development environment
+- ``pydev_env``: Source this to activate your development environment.
+- ``pydev_register <path> <module or bin>``:
+  Use this to set up your development environment.
 
 These scripts work by:
 
