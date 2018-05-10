@@ -30,7 +30,7 @@ Using In-Development Packages
 =============================
 It is possible to develop new packages without creating your own environment.
 This is useful if you made changes to a library or multiple libraries and want
-to test how they interact with eachother and with the rest of the released
+to test how they interact with each other and with the rest of the released
 ecosystem. The recommended way to do this is to use ``$PYTHONPATH`` to mask the
 shared packages with your in-development packages.
 
