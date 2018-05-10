@@ -53,7 +53,12 @@ These scripts work by:
   packages and scripts
 
 See :doc:`development` for instructions on checking out and modifying packages.
-See below for examples on using these scripts:
+See below for examples on using these scripts.
+
+.. note::
+
+   You can use this in a hutch-python instance too! Just add
+   ``source pydev_env`` to the end of the ``hutchnameversion`` file.
 
 .. code:: bash
 
