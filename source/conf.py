@@ -19,6 +19,7 @@
 #
 # import os
 # import sys
+import datetime
 import sphinx_rtd_theme
 # sys.path.insert(0, os.path.abspath('.'))
 
@@ -32,7 +33,8 @@ import sphinx_rtd_theme
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['sphinx.ext.githubpages']
+extensions = ['sphinx.ext.githubpages',
+              'IPython.sphinxext.ipython_directive']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -48,7 +50,8 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'PCDS'
-copyright = '2017, SLAC National Accelarator Laboratory'
+year = datetime.datetime.now().year
+copyright = '{}, SLAC National Accelarator Laboratory'.format(year)
 author = 'SLAC National Accelarator Laboratory'
 
 # The version info for the project you're documenting, acts as replacement for
