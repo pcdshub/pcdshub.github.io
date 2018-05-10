@@ -28,9 +28,11 @@ not present, contact PCDS and we will include it a subsequent release.
 
 Using In-Development Packages
 =============================
-It is possible to develop new packages without creating your own environments.
-The recommended way to do this is to use ``$PYTHONPATH`` to mask the shared
-packages with your in-development packages.
+It is possible to develop new packages without creating your own environment.
+This is useful if you made changes to a library or multiple libraries and want
+to test how they interact with eachother and with the rest of the released
+ecosystem. The recommended way to do this is to use ``$PYTHONPATH`` to mask the
+shared packages with your in-development packages.
 
 Tools are provided in our
 `Engineering Tools <https://github.com/pcdshub/engineering_tools>`_ repo
@@ -60,9 +62,12 @@ See below for examples on using these scripts.
 
    You can use this in a hutch-python instance too! Just add
    ``source pydev_env`` to the end of the ``hutchnameversion`` file.
+   Warning: Do not check this in or include it in a release, or each user may
+   have slightly different startup behavior...
 
 .. code:: bash
 
+   # Local repository checkouts
    $ ls
    happi hutch-python pcdsdevices special_package
 
@@ -72,12 +77,14 @@ See below for examples on using these scripts.
    $ pydev_register pcdsdevices/pcdsdevices module
    $ pydev_register special_package/special_package module
 
+   # The module softlinks are created here
    $ ls ~/pydev
    bin happi hutch_python pcdsdevices special_package
 
    # Add the hutch-python script to our PATH
    $ pydev_register hutch-python/bin/hutch-python bin
 
+   # The bin softlinks are created here
    $ ls ~/pydev/bin
    hutch-python
 
