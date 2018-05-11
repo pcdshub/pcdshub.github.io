@@ -23,8 +23,98 @@ not present, contact PCDS and we will include it a subsequent release.
 
 .. note::
 
-   Do not create your own environments here. See the instructions below to
-   create your own environment if you want to try different packages
+   Do not create your own environments here.
+   See :ref:`ref-create-env` if you want to try different packages
+
+Using In-Development Packages
+=============================
+It is possible to develop new packages without creating your own environment.
+This is useful if you made changes to a library or multiple libraries and want
+to test how they interact with each other and with the rest of the released
+ecosystem. The recommended way to do this is to use ``$PYTHONPATH`` to mask the
+shared packages with your in-development packages.
+
+Tools are provided in our
+`Engineering Tools <https://github.com/pcdshub/engineering_tools>`_ repo
+to keep this process manageable. You can stay up-to-date with the most recent
+tools releases by keeping
+``/reg/g/pcds/engineering_tools/engineering_tools/scripts``
+on your path, or by cloning the github repository.
+You can also use these scripts as a starting point for your own.
+The relevant scripts are:
+
+- ``pydev_env``: Source this to activate your development environment.
+- ``pydev_register <path> <module or bin>``:
+  Use this to set up your development environment.
+
+These scripts work by:
+
+- Activating the shared environment
+- prepending ``$PYTHONPATH`` with ``~/pydev``
+- prepending ``$PATH`` with ``~/pydev/bin``
+- filling ``~/pydev`` and ``~/pydev/bin`` with softlinks to your checked-out
+  packages and scripts
+
+See :doc:`development` for instructions on checking out and modifying packages.
+See below for examples on using these scripts.
+
+.. note::
+
+   You can use this in a hutch-python instance too! Just add
+   ``source pydev_env`` to the end of the ``hutchnameversion`` file.
+   Warning: Do not check this in or include it in a release, or each user may
+   have slightly different startup behavior...
+
+.. code:: bash
+
+   # Local repository checkouts
+   $ ls
+   happi hutch-python pcdsdevices special_package
+
+   # Add the modules to our PYTHONPATH
+   $ pydev_register happi/happi module
+   $ pydev_register hutch-python/hutch_python module
+   $ pydev_register pcdsdevices/pcdsdevices module
+   $ pydev_register special_package/special_package module
+
+   # The module softlinks are created here
+   $ ls ~/pydev
+   bin happi hutch_python pcdsdevices special_package
+
+   # Add the hutch-python script to our PATH
+   $ pydev_register hutch-python/bin/hutch-python bin
+
+   # The bin softlinks are created here
+   $ ls ~/pydev/bin
+   hutch-python
+
+   # Activate our environment
+   $ source pydev_env
+   $ ipython
+
+.. ipython::
+   :verbatim:
+
+   In [1]: import special_package
+
+   In [2]: import pcdsdaq
+
+   In [3]: import pcdsdevices
+
+   In [4]: pcdsdaq.__file__
+   Out[4]: '/reg/g/pcds/pyps/conda/py36/envs/pcds-1.0.0/lib/python3.6/site-packages/pcdsdaq/__init__.py'
+
+   In [5]: pcdsdevices.__file__
+   Out[5]: '/reg/neh/home/username/pydev/pcdsdevices/__init__.py'
+
+.. code:: bash
+
+   # Some time later: our PRs are done, clear our development path
+   $ rm ~/pydev/*
+   $ rm ~/pydev/bin/*
+
+
+.. _ref-create-env:
 
 Creating Your Own Environment
 =============================
