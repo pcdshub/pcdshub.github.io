@@ -1,0 +1,372 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Installation &mdash; PCDS  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Development" href="development.html" />
+    <link rel="prev" title="PCDS" href="index.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> PCDS
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#using-an-existing-environment">Using an Existing Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-in-development-packages">Using In-Development Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-your-own-environment">Creating Your Own Environment</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Common Questions and Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Recommended Resources</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/slaclab">SLAC-wide GitHub</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pcdshub">PCDS GitHub</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PCDS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Installation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/installation.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<p>PCDS uses Conda to manage Python packaging. This allows users to quickly
+assemble virtual environments with different combinations of packages. An
+elementary understanding of what Conda is, and how to use it is assumed in the
+tutorial below. If you need a refresher, <a class="reference external" href="https://conda.io/docs/user-guide/getting-started.html">here</a> is a good place to start.</p>
+<div class="section" id="using-an-existing-environment">
+<h2>Using an Existing Environment<a class="headerlink" href="#using-an-existing-environment" title="Permalink to this headline">¶</a></h2>
+<p>A Conda deployment is maintained in <code class="docutils literal notranslate"><span class="pre">/reg/g/pcds/pyps/conda</span></code> with different
+versions of the <code class="docutils literal notranslate"><span class="pre">pcds</span></code> environment. Activate the latest one by:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ source /reg/g/pcds/pyps/conda/py36env.sh
+</pre></div>
+</div>
+<p>If you want an older release, enter this as an argument to the shell script.
+The environment contained is <strong>read-only</strong>. You should not try and add packages
+to these environments. If you believe that a package should be included that is
+not present, contact PCDS and we will include it a subsequent release.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Do not create your own environments here.
+See <a class="reference internal" href="#ref-create-env"><span class="std std-ref">Creating Your Own Environment</span></a> if you want to try different packages</p>
+</div>
+</div>
+<div class="section" id="using-in-development-packages">
+<h2>Using In-Development Packages<a class="headerlink" href="#using-in-development-packages" title="Permalink to this headline">¶</a></h2>
+<p>It is possible to develop new packages without creating your own environment.
+This is useful if you made changes to a library or multiple libraries and want
+to test how they interact with each other and with the rest of the released
+ecosystem. The recommended way to do this is to use <code class="docutils literal notranslate"><span class="pre">$PYTHONPATH</span></code> to mask the
+shared packages with your in-development packages.</p>
+<p>Tools are provided in our
+<a class="reference external" href="https://github.com/pcdshub/engineering_tools">Engineering Tools</a> repo
+to keep this process manageable. You can stay up-to-date with the most recent
+tools releases by keeping
+<code class="docutils literal notranslate"><span class="pre">/reg/g/pcds/engineering_tools/engineering_tools/scripts</span></code>
+on your path, or by cloning the github repository.
+You can also use these scripts as a starting point for your own.
+The relevant scripts are:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">pydev_env</span></code>: Source this to activate your development environment.</li>
+<li><code class="docutils literal notranslate"><span class="pre">pydev_register</span> <span class="pre">&lt;path&gt;</span> <span class="pre">&lt;module</span> <span class="pre">or</span> <span class="pre">bin&gt;</span></code>:
+Use this to set up your development environment.</li>
+</ul>
+<p>These scripts work by:</p>
+<ul class="simple">
+<li>Activating the shared environment</li>
+<li>prepending <code class="docutils literal notranslate"><span class="pre">$PYTHONPATH</span></code> with <code class="docutils literal notranslate"><span class="pre">~/pydev</span></code></li>
+<li>prepending <code class="docutils literal notranslate"><span class="pre">$PATH</span></code> with <code class="docutils literal notranslate"><span class="pre">~/pydev/bin</span></code></li>
+<li>filling <code class="docutils literal notranslate"><span class="pre">~/pydev</span></code> and <code class="docutils literal notranslate"><span class="pre">~/pydev/bin</span></code> with softlinks to your checked-out
+packages and scripts</li>
+</ul>
+<p>See <a class="reference internal" href="development.html"><span class="doc">Development</span></a> for instructions on checking out and modifying packages.
+See below for examples on using these scripts.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You can use this in a hutch-python instance too! Just add
+<code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">pydev_env</span></code> to the end of the <code class="docutils literal notranslate"><span class="pre">hutchnameversion</span></code> file.
+Warning: Do not check this in or include it in a release, or each user may
+have slightly different startup behavior…</p>
+</div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span># Local repository checkouts
+$ ls
+happi hutch-python pcdsdevices special_package
+
+# Add the modules to our PYTHONPATH
+$ pydev_register happi/happi module
+$ pydev_register hutch-python/hutch_python module
+$ pydev_register pcdsdevices/pcdsdevices module
+$ pydev_register special_package/special_package module
+
+# The module softlinks are created here
+$ ls ~/pydev
+bin happi hutch_python pcdsdevices special_package
+
+# Add the hutch-python script to our PATH
+$ pydev_register hutch-python/bin/hutch-python bin
+
+# The bin softlinks are created here
+$ ls ~/pydev/bin
+hutch-python
+
+# Activate our environment
+$ source pydev_env
+$ ipython
+</pre></div>
+</div>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">special_package</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">pcdsdaq</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">pcdsdevices</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="n">pcdsdaq</span><span class="o">.</span><span class="vm">__file__</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="s1">&#39;/reg/g/pcds/pyps/conda/py36/envs/pcds-1.0.0/lib/python3.6/site-packages/pcdsdaq/__init__.py&#39;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="n">pcdsdevices</span><span class="o">.</span><span class="vm">__file__</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="s1">&#39;/reg/neh/home/username/pydev/pcdsdevices/__init__.py&#39;</span>
+</pre></div>
+</div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span># Some time later: our PRs are done, clear our development path
+$ rm ~/pydev/*
+$ rm ~/pydev/bin/*
+</pre></div>
+</div>
+</div>
+<div class="section" id="creating-your-own-environment">
+<span id="ref-create-env"></span><h2>Creating Your Own Environment<a class="headerlink" href="#creating-your-own-environment" title="Permalink to this headline">¶</a></h2>
+<p>Many developers may want to create their own environments to experiment with
+different packages and tools. We recommend that you do this in your own
+Miniconda installation. From a machine with internet access:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
+
+$ bash miniconda.sh -b -p ~/miniconda
+</pre></div>
+</div>
+<p>This will give you a clean installation of Conda for you to play around with.
+Feel free to create and name environments as you please. You can make
+conda ready to use by sourcing the following scripts. You may want to
+include this in your <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> or startup file equivalent:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ source ~/miniconda/etc/profile.d/conda.sh
+</pre></div>
+</div>
+<p>or, for tcsh:</p>
+<div class="code tcsh highlight-default notranslate"><div class="highlight"><pre><span></span>$ source ~/miniconda/etc/profile.d/conda.csh
+</pre></div>
+</div>
+<p>If you want to create a copy of the latest PCDS deployment environment the
+easiest way is to use the <code class="docutils literal notranslate"><span class="pre">.yaml</span></code> specification that we keep with the main
+Conda deployment.</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ conda env create -n myenvname -f /reg/g/pcds/pyps/conda/pcds-envs/pcds.yaml
+</pre></div>
+</div>
+<p>This will create an environment <code class="docutils literal notranslate"><span class="pre">myenvname</span></code> that is an exact copy of the
+deployment environment in your own Conda installation.</p>
+<p>You can activate or deactivate an environment with the following commands:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ conda activate myenvname
+$ conda deactivate
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="development.html" class="btn btn-neutral float-right" title="Development" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="PCDS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, SLAC National Accelarator Laboratory.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
