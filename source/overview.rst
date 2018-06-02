@@ -47,29 +47,38 @@ corresponding online documentation page.
 
 Hutch-specific Repositories
 ---------------------------
-============ ===============================================================
-Repository   `amo <https://github.com/pcdshub/amo>`_,
-             `sxr <https://github.com/pcdshub/sxr>`_,
-             `xpp <https://github.com/pcdshub/xpp>`_,
-             `xcs <https://github.com/pcdshub/xcs>`_,
-             `mfx <https://github.com/pcdshub/mfx>`_,
-             `cxi <https://github.com/pcdshub/cxi>`_,
-             and `mec <https://github.com/pcdshub/mec>`_
+============= ===============================================================
+Repository    `amo <https://github.com/pcdshub/amo>`_,
+              `sxr <https://github.com/pcdshub/sxr>`_,
+              `xpp <https://github.com/pcdshub/xpp>`_,
+              `xcs <https://github.com/pcdshub/xcs>`_,
+              `mfx <https://github.com/pcdshub/mfx>`_,
+              `cxi <https://github.com/pcdshub/cxi>`_,
+              and `mec <https://github.com/pcdshub/mec>`_
 
-Motivation   These are the designated landing areas for hutch-specific and
-             experiment-specific code. 
+How we use it We put softlinks like ``mfx3`` in the hutch opr's path. These
+              link to scripts like ``mfxpython`` in the repository that launch
+              a convenient IPython environment for controlling the hutch and
+              automating DAQ data collection. The repository is used to host
+              hutch-specific classes, devices, and configurations that may
+              later be merged into a shared module.
 
-Usage        Call ``xpppython``, ``mfxpython``, etc. to start a specialized
-             ``IPython`` session for a particular hutch to control beamlines
-             and run experiments.
+Motivation    We need dedicated landing areas for hutch-specific and
+              experiment-specific code to satisfy the needs of a constantly
+              shifting environment.
 
-How it works   test
+How it works  A version file e.g. ``mfxversion`` chooses a shared conda
+              environment and may set up development package overrides. The
+              ``mfxpython`` script enters this environment using
+              :ref:`hutch-python` and a brief ``conf.yml`` configuration file.
+              These coordinate the loading of shared services and provide
+              hooks for the hutch-specific code.
 
-Dependencies This may vary between hutches, but all hutches rely on
-             :ref:`hutch-python` as the launcher and configuration
-             reader. All of these repositories were created from the
-             ``hutch-python --create reponame`` template function.
-============ ===============================================================
+Dependencies  This may vary between hutches, but all hutches rely on
+              :ref:`hutch-python` as the launcher and configuration
+              reader. All of these repositories were created from the
+              ``hutch-python --create reponame`` template function.
+============  ===============================================================
 
 hutch-python
 ------------
