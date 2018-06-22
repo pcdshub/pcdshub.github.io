@@ -47,7 +47,7 @@ corresponding online documentation page.
 
 Hutch-specific Repositories
 ---------------------------
-============= ===============================================================
+============= ================================================================
 Repository    `amo <https://github.com/pcdshub/amo>`_,
               `sxr <https://github.com/pcdshub/sxr>`_,
               `xpp <https://github.com/pcdshub/xpp>`_,
@@ -58,14 +58,16 @@ Repository    `amo <https://github.com/pcdshub/amo>`_,
 
 How we use it We put softlinks like ``mfx3`` in the hutch opr's path. These
               link to scripts like ``mfxpython`` in the repository that launch
-              a convenient IPython environment for controlling the hutch and
-              automating DAQ data collection. The repository is used to host
-              hutch-specific classes, devices, and configurations that may
-              later be merged into a shared module.
+              a convenient ``IPython`` environment for controlling the hutch
+              and automating DAQ data collection. The repository is used to
+              host hutch-specific classes, devices, and configurations that
+              may later be merged into a shared module.
 
 Motivation    We need dedicated landing areas for hutch-specific and
               experiment-specific code to satisfy the needs of a constantly
-              shifting environment.
+              shifting environment. This can't go into a module because the
+              module can't control which python environment you launch it
+              from.
 
 How it works  A version file e.g. ``mfxversion`` chooses a shared conda
               environment and may set up development package overrides. The
@@ -78,7 +80,7 @@ Dependencies  This may vary between hutches, but all hutches rely on
               :ref:`hutch-python` as the launcher and configuration
               reader. All of these repositories were created from the
               ``hutch-python --create reponame`` template function.
-============  ===============================================================
+============  ================================================================
 
 hutch-python
 ------------
@@ -91,7 +93,10 @@ How we use it Scripts like ``mfxpython`` call on the ``hutch-python``
 
 Motivation    The load process for each hutch is essentially identical. This
               should be handled in shared code with simple hooks for
-              hutch-specific and experiment-specific additions.
+              hutch-specific and experiment-specific additions. The best
+              alternaive is using ``IPython`` profiles which can get messy and
+              hard to manage, as we would need to occassionally go around and
+              rewrite boilerplate code.
 
 How it works  A shared startup script is seeded with the contents of the
               ``conf.yml`` file. Shared operations are done the same way and
@@ -106,7 +111,10 @@ Dependencies  This is used by the :ref:`Hutch-specific repositories` to
                 and from the questionnaire experiment devices
               - Uses :ref:`pcdsdevices` for the device definitions and to set
                 up position presets
-              - 
+              - Uses :ref:`pcdsdaq` to control the data acquisition system
+              - Uses :ref:`lightpath` as a command-line interface for checking
+                if anything is blocking the beam path
+              - Uses :ref:`elog` to post to the experiment logbooks
 ============  ================================================================
 
 lightpath
