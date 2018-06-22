@@ -85,7 +85,7 @@ Dependencies  This may vary between hutches, but all hutches rely on
 hutch-python
 ------------
 ============= ================================================================
-Repository    `hutch-python <https://github.com/pcdshub/hutch-python>`_,
+Repository    `hutch-python <https://github.com/pcdshub/hutch-python>`_
 
 How we use it Scripts like ``mfxpython`` call on the ``hutch-python``
               application with a hutch-specific ``conf.yaml`` file, as well as
@@ -120,7 +120,7 @@ Dependencies  This is used by the :ref:`Hutch-specific repositories` to
 lightpath
 ---------
 ============= ================================================================
-Repository    `lightpath <https://github.com/pcdshub/lightpath>`_,
+Repository    `lightpath <https://github.com/pcdshub/lightpath>`_
 
 How we use it An environment with ``lightpath`` installed has a ``lightpath``
               script that will open the GUI. This can be use to visually
@@ -147,7 +147,7 @@ Dependencies  - Uses :ref:`pydm` for the GUI
 pmgr
 ----
 ============= ================================================================
-Repository    `pmgr <https://github.com/pcdshub/pmgr>`_,
+Repository    `pmgr <https://github.com/pcdshub/pmgr>`_
 
 How we use it This is the Parameter Manager, ``pmgr`` for short. This isn't
               installed in an environment (yet), but is used as a stand-alone
@@ -170,7 +170,7 @@ Dependencies  ``pmgr`` does not depend on our other modules, but it does
 pcds-envs
 ---------
 ============= ================================================================
-Repository    `pcds-envs <https://github.com/pcdshub/pcds-envs>`_,
+Repository    `pcds-envs <https://github.com/pcdshub/pcds-envs>`_
 
 How we use it This is used to track our shared environment changes, and to
               anticipate and catch integration problems with bringing all of
@@ -195,7 +195,7 @@ Dependencies  This only depends on ``Python`` and ``Conda``
 pcds-recipes
 ------------
 ============= ================================================================
-Repository    `pcds-recipes <https://github.com/pcdshub/pcds-recipes>`_,
+Repository    `pcds-recipes <https://github.com/pcdshub/pcds-recipes>`_
 
 How we use it This is used to build non-pcdshub conda packages and make sure
               they get into the pcds-tag channel.
@@ -222,7 +222,7 @@ corresponding online documentation page.
 typhon
 ------
 ============= ================================================================
-Repository    `typhon <https://github.com/pcdshub/typhon>`_,
+Repository    `typhon <https://github.com/pcdshub/typhon>`_
 
 How we use it Automatically generate screens from ophyd devices.
 
@@ -240,7 +240,7 @@ Dependencies  :ref:`pydm` and :ref:`ophyd`
 pcdsdevices
 -----------
 ============= ================================================================
-Repository    `pcdsdevices <https://github.com/pcdshub/pcdsdevices>`_,
+Repository    `pcdsdevices <https://github.com/pcdshub/pcdsdevices>`_
 
 How we use it To define :ref:`ophyd` device classes that correspond to lcls
               pcds EPICS IOCs. This is also where we put additional logic and
@@ -260,7 +260,7 @@ Dependencies  - :ref:`ophyd`
 transfocate
 -----------
 ============= ================================================================
-Repository    `transfocate <https://github.com/pcdshub/transfocate>`_,
+Repository    `transfocate <https://github.com/pcdshub/transfocate>`_
 
 How we use it To define an :ref:`ophyd` device class for the MFX transfocator.
 
@@ -276,7 +276,7 @@ Dependencies  :ref:`pcdsdevices`
 hxrsnd
 ------
 ============= ================================================================
-Repository    `hxrsnd <https://github.com/pcdshub/hxrsnd>`_,
+Repository    `hxrsnd <https://github.com/pcdshub/hxrsnd>`_
 
 How we use it To define :ref:`ophyd` device classes and :ref:`bluesky`
               scanning routines for the XCS split and delay.
@@ -293,7 +293,7 @@ Dependencies  :ref:`pcdsdevices`, ``pswalker``
 nabs
 ----
 ============= ================================================================
-Repository    `nabs <https://github.com/pcdshub/nabs>`_,
+Repository    `nabs <https://github.com/pcdshub/nabs>`_
 
 How we use it To define lcls-specific :ref:`bluesky` utilities and to build
               out the :ref:`bluesky` automation framework.
@@ -311,7 +311,7 @@ Dependencies  :ref:`bluesky`
 pcdsdaq
 -------
 ============= ================================================================
-Repository    `pcdsdaq <https://github.com/pcdshub/pcdsdaq>`_,
+Repository    `pcdsdaq <https://github.com/pcdshub/pcdsdaq>`_
 
 How we use it To define a :ref:`bluesky`-compatible control layer for the
               LCLS1 data aquisition system (DAQ)
@@ -330,7 +330,7 @@ Dependencies  :ref:`bluesky`, :ref:`ophyd`, ``pydaq``
 happi
 -----
 ============= ================================================================
-Repository    `happi <https://github.com/pcdshub/happi>`_,
+Repository    `happi <https://github.com/pcdshub/happi>`_
 
 How we use it To store all of our device metadata in :ref:`device_config` and
               reload these devices to create identical objects in every
@@ -349,7 +349,7 @@ Dependencies  No pcdshub dependencies
 device_config
 -------------
 ============= ================================================================
-Repository    `device_config <https://github.com/pcdshub/device_config>`_,
+Repository    `device_config <https://github.com/pcdshub/device_config>`_
 
 How we use it As a central file store of all the :ref:`happi` device
               configuration information.
@@ -365,7 +365,7 @@ Dependencies  No pcdshub dependencies
 elog
 ----
 ============= ================================================================
-Repository    `elog <https://github.com/pcdshub/elog>`_,
+Repository    `elog <https://github.com/pcdshub/elog>`_
 
 How we use it To post information to the experiment elog.
 
@@ -385,7 +385,7 @@ and explain the motivations behind the modules and behind why we use them.
 bluesky
 -------
 ============= ================================================================
-Repository    `bluesky <https://github.com/nsls-ii/bluesky>`_,
+Repository    `bluesky <https://github.com/nsls-ii/bluesky>`_
 
 How we use it As the scanning, process flow, and automation platform.
 
@@ -404,7 +404,7 @@ How it works  A central ``RunEngine`` object processes user-created
 ophyd
 -----
 ============= ================================================================
-Repository    `ophyd <https://github.com/nsls-ii/ophyd>`_,
+Repository    `ophyd <https://github.com/nsls-ii/ophyd>`_
 
 How we use it As the device control abstraction layer.
 
@@ -418,7 +418,7 @@ How it works  ``Device`` subclasses register ``Component`` attributes so that
 pydm
 ----
 ============= ================================================================
-Repository    `pydm <https://github.com/nsls-ii/pydm>`_,
+Repository    `pydm <https://github.com/nsls-ii/pydm>`_
 
 How we use it ``pyqt``-based EPICS control screens.
 
