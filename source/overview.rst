@@ -82,20 +82,32 @@ Dependencies  This may vary between hutches, but all hutches rely on
 
 hutch-python
 ------------
-`hutch-python <https://github.com/pcdshub/hutch-python>`_ is the launcher
-for interactive ``IPython`` sessions that control the beamlines and experiment
-setups.
+============= ================================================================
+Repository    `hutch-python <https://github.com/pcdshub/hutch-python>`_,
 
-Motivation
-^^^^^^^^^^
-The load process for each hutch is essentially identical. This should be
-handled in shared code with simple hooks for hutch-specific and
-experiment-specific additions.
+How we use it Scripts like ``mfxpython`` call on the ``hutch-python``
+              application with a hutch-specific ``conf.yaml`` file, as well as
+              hutch-specific ``mfx/beamline.py`` and ``experiments`` folder.
 
-How it Works
-^^^^^^^^^^^^
-pass
+Motivation    The load process for each hutch is essentially identical. This
+              should be handled in shared code with simple hooks for
+              hutch-specific and experiment-specific additions.
 
+How it works  A shared startup script is seeded with the contents of the
+              ``conf.yml`` file. Shared operations are done the same way and
+              then the ``beamline.py`` and ``experiments`` user code is
+              invoked.
+
+Dependencies  This is used by the :ref:`Hutch-specific repositories` to 
+
+              Relies on most of our modules:
+
+              - Uses :ref:`happi` to load from the beamline device database
+                and from the questionnaire experiment devices
+              - Uses :ref:`pcdsdevices` for the device definitions and to set
+                up position presets
+              - 
+============  ================================================================
 
 lightpath
 ---------
