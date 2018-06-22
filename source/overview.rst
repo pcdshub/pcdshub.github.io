@@ -221,6 +221,21 @@ corresponding online documentation page.
 
 typhon
 ------
+============= ================================================================
+Repository    `typhon <https://github.com/pcdshub/typhon>`_,
+
+How we use it Automatically generate screens from ophyd devices.
+
+Motivation    We need new :ref:`pydm` screens and these are great starting
+              points. The :ref:`ophyd` device structure is very useful for
+              organizing device properties into logical groups.
+
+How it works  Group device components by kind (e.g. hinted, normal,
+              configuration) and sort into tabs, etc. accordingly. Provide
+              tools on every generated screen.
+
+Dependencies  :ref:`pydm` and :ref:`ophyd`
+============= ================================================================
 
 pcdsdevices
 -----------
