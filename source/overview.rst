@@ -120,7 +120,7 @@ Dependencies  This is used by the :ref:`Hutch-specific repositories` to
 lightpath
 ---------
 ============= ================================================================
-Repository    `hutch-python <https://github.com/pcdshub/lightpath>`_,
+Repository    `lightpath <https://github.com/pcdshub/lightpath>`_,
 
 How we use it An environment with ``lightpath`` installed has a ``lightpath``
               script that will open the GUI. This can be use to visually
@@ -147,7 +147,7 @@ Dependencies  - Uses :ref:`pydm` for the GUI
 pmgr
 ----
 ============= ================================================================
-Repository    `hutch-python <https://github.com/pcdshub/lightpath>`_,
+Repository    `pmgr <https://github.com/pcdshub/pmgr>`_,
 
 How we use it This is the Parameter Manager, ``pmgr`` for short. This isn't
               installed in an environment (yet), but is used as a stand-alone
@@ -169,6 +169,25 @@ Dependencies  ``pmgr`` does not depend on our other modules, but it does
 
 pcds-envs
 ---------
+============= ================================================================
+Repository    `pcds-envs <https://github.com/pcdshub/pcds-envs>`_,
+
+How we use it This is used to track our shared environment changes, and to
+              anticipate and catch integration problems with bringing all of
+              our packages together.
+
+Motivation    We need to do this in a structured, semi-automated way to
+              minimize upkeep and catch mistakes.
+
+How it works  ``packages.txt`` is updated to add new packages.
+              ``stage_release.sh`` is ran to build a new environment from the
+              packages list and push it to github. We make a PR and discuss.
+              If we like the new environment, we merge the PR and make a tag.
+              We use ``apply_release.sh`` to put the new tag into the shared
+              environment.
+
+Dependencies  This only depends on ``Python`` and ``Conda``
+============= ================================================================
 
 pcds-recipes
 ------------
