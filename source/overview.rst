@@ -230,8 +230,8 @@ Motivation    We need new :ref:`pydm` screens and these are great starting
               points. The :ref:`ophyd` device structure is very useful for
               organizing device properties into logical groups.
 
-How it works  Group device components by kind (e.g. hinted, normal,
-              configuration) and sort into tabs, etc. accordingly. Provide
+How it works  Groups device components by kind (e.g. hinted, normal,
+              configuration) and sort into tabs, etc. accordingly. Provides
               tools on every generated screen.
 
 Dependencies  :ref:`pydm` and :ref:`ophyd`
@@ -239,6 +239,23 @@ Dependencies  :ref:`pydm` and :ref:`ophyd`
 
 pcdsdevices
 -----------
+============= ================================================================
+Repository    `pcdsdevices <https://github.com/pcdshub/pcdsdevices>`_,
+
+How we use it To define :ref:`ophyd` device classes that correspond to lcls
+              pcds EPICS IOCs. This is also where we put additional logic and
+              cli niceties for interactive sessions with these devices.
+
+Motivation    There must be a common place where these classes are defined
+              so that all of our ``Python`` applications share PV structures
+              and logic for each identical device class or instance.
+
+How it works  Follow the :ref:`ophyd` rules to record which PVs are associated
+              with each device class.
+
+Dependencies  - :ref:`ophyd`
+              - ``pyepics``, currently as the EPICS communication layer
+============= ================================================================
 
 transfocate
 -----------
