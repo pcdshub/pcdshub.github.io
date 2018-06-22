@@ -330,7 +330,7 @@ Dependencies  :ref:`bluesky`, :ref:`ophyd`, ``pydaq``
 happi
 -----
 ============= ================================================================
-Repository    `happi <https://github.com/pcdshub/happi`_,
+Repository    `happi <https://github.com/pcdshub/happi>`_,
 
 How we use it To store all of our device metadata in :ref:`device_config` and
               reload these devices to create identical objects in every
@@ -349,7 +349,7 @@ Dependencies  No pcdshub dependencies
 device_config
 -------------
 ============= ================================================================
-Repository    `device_config <https://github.com/pcdshub/device_config`_,
+Repository    `device_config <https://github.com/pcdshub/device_config>`_,
 
 How we use it As a central file store of all the :ref:`happi` device
               configuration information.
@@ -365,7 +365,7 @@ Dependencies  No pcdshub dependencies
 elog
 ----
 ============= ================================================================
-Repository    `elog <https://github.com/pcdshub/elog`_,
+Repository    `elog <https://github.com/pcdshub/elog>`_,
 
 How we use it To post information to the experiment elog.
 
@@ -385,7 +385,7 @@ and explain the motivations behind the modules and behind why we use them.
 bluesky
 -------
 ============= ================================================================
-Repository    `bluesky <https://github.com/nsls-ii/bluesky`_,
+Repository    `bluesky <https://github.com/nsls-ii/bluesky>`_,
 
 How we use it As the scanning, process flow, and automation platform.
 
@@ -401,10 +401,10 @@ How it works  A central ``RunEngine`` object processes user-created
               arbitrary adaptive logic since this is ``Python``.
 ============= ================================================================
 
-opyhd
+ophyd
 -----
 ============= ================================================================
-Repository    `ophyd <https://github.com/nsls-ii/ophyd`_,
+Repository    `ophyd <https://github.com/nsls-ii/ophyd>`_,
 
 How we use it As the device control abstraction layer.
 
@@ -418,7 +418,7 @@ How it works  ``Device`` subclasses register ``Component`` attributes so that
 pydm
 ----
 ============= ================================================================
-Repository    `pydm <https://github.com/nsls-ii/pydm`_,
+Repository    `pydm <https://github.com/nsls-ii/pydm>`_,
 
 How we use it ``pyqt``-based EPICS control screens.
 
