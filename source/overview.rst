@@ -80,7 +80,7 @@ Dependencies  This may vary between hutches, but all hutches rely on
               :ref:`hutch-python` as the launcher and configuration
               reader. All of these repositories were created from the
               ``hutch-python --create reponame`` template function.
-============  ================================================================
+============= ================================================================
 
 hutch-python
 ------------
@@ -115,14 +115,14 @@ Dependencies  This is used by the :ref:`Hutch-specific repositories` to
               - Uses :ref:`lightpath` as a command-line interface for checking
                 if anything is blocking the beam path
               - Uses :ref:`elog` to post to the experiment logbooks
-============  ================================================================
+============= ================================================================
 
 lightpath
 ---------
 ============= ================================================================
 Repository    `hutch-python <https://github.com/pcdshub/lightpath>`_,
 
-How we use it An environment with ``lightpath`` installs has a ``lightpath``
+How we use it An environment with ``lightpath`` installed has a ``lightpath``
               script that will open the GUI. This can be use to visually
               inspect the light path. This doubles as an application and a
               module, providing an importable interface that is used in other
@@ -142,10 +142,30 @@ How it works  This uses the z-position and beamline metadate from :ref:`happi`
 Dependencies  - Uses :ref:`pydm` for the GUI
               - Uses :ref:`happi` for device loading
               - Uses modules like :ref:`pcdsdevices` to define device classes
-============  ================================================================
+============= ================================================================
 
 pmgr
 ----
+============= ================================================================
+Repository    `hutch-python <https://github.com/pcdshub/lightpath>`_,
+
+How we use it This is the Parameter Manager, ``pmgr`` for short. This isn't
+              installed in an environment (yet), but is used as a stand-alone
+              GUI for keeping track of device parameters. It is used in the
+              old python cli for the same purpose, but this has yet to be
+              ported.
+
+Motivation    We need a place to keep track of and restore parameters to ease
+              the deployment and redeployment of motors for changing
+              experimental needs.
+
+How it works  ``pmgr`` provides a qt gui with a mysql server backend that
+              stores all of the parameters.
+
+Dependencies  ``pmgr`` does not depend on our other modules, but it does
+              depend on our patched version of ``pyqt`` to make the tables
+              work.
+============= ================================================================
 
 pcds-envs
 ---------
