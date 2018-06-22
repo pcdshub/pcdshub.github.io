@@ -399,6 +399,8 @@ How it works  A central ``RunEngine`` object processes user-created
               motors, read values, etc., but they can also be inspected to
               see what the plan would do if we ran it, and they can be given
               arbitrary adaptive logic since this is ``Python``.
+
+Dependencies  No pcdshub dependencies
 ============= ================================================================
 
 ophyd
@@ -413,12 +415,14 @@ Motivation    We need to have a sane convention for defining devices, and a
 
 How it works  ``Device`` subclasses register ``Component`` attributes so that
               every instance knows which PVs to connect to.
+
+Dependencies  No pcdshub dependencies
 ============= ================================================================
 
 pydm
 ----
 ============= ================================================================
-Repository    `pydm <https://github.com/nsls-ii/pydm>`_
+Repository    `pydm <https://github.com/slaclab/pydm>`_
 
 How we use it ``pyqt``-based EPICS control screens.
 
@@ -430,4 +434,6 @@ How it works  This leverages qt ``designer`` as a drag-and-drop interface. A
               rich ``Python`` API is provided for interacting with EPICS PVs
               and with archiver data, among other things. Widgets are provided
               that correspond to the legacy EDM widgets.
+
+Dependencies  No pcdshub dependencies
 ============= ================================================================
