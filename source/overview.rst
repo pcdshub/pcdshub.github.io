@@ -182,6 +182,9 @@ Motivation    We need to do this in a structured, semi-automated way to
 How it works  ``packages.txt`` is updated to add new packages.
               ``stage_release.sh`` is ran to build a new environment from the
               packages list and push it to github. We make a PR and discuss.
+              Along with the PR, an automated test is ran to check that all
+              of our pcdshub modules pass their individual automated tests
+              with the full environment (this also runs daily).
               If we like the new environment, we merge the PR and make a tag.
               We use ``apply_release.sh`` to put the new tag into the shared
               environment.
@@ -191,6 +194,22 @@ Dependencies  This only depends on ``Python`` and ``Conda``
 
 pcds-recipes
 ------------
+============= ================================================================
+Repository    `pcds-recipes <https://github.com/pcdshub/pcds-recipes>`_,
+
+How we use it This is used to build non-pcdshub conda packages and make sure
+              they get into the pcds-tag channel.
+
+Motivation    It is unsustanable and unstable to rely on special channels for
+              our conda environments. By limiting to the ``defaults``,
+              ``conda-forge``, and our own ``pcds-tag`` it becomes easy to
+              specify our environment setups.
+
+How it works  Recipes are placed into the repository and ``build.py`` builds
+              and uploads them.
+
+Dependencies  This only depends on ``Python`` and ``Conda``
+============= ================================================================
 
 
 Modules
