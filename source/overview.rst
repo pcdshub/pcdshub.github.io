@@ -119,6 +119,30 @@ Dependencies  This is used by the :ref:`Hutch-specific repositories` to
 
 lightpath
 ---------
+============= ================================================================
+Repository    `hutch-python <https://github.com/pcdshub/lightpath>`_,
+
+How we use it An environment with ``lightpath`` installs has a ``lightpath``
+              script that will open the GUI. This can be use to visually
+              inspect the light path. This doubles as an application and a
+              module, providing an importable interface that is used in other
+              places, such as :ref:`hutch-python`.
+
+Motivation    Help the user find which objects are in the beam, and which are
+              not. This can be used to clear the beamline and to check if you
+              expect beam to be incident on your imager. Unlike older
+              software with the same purpose, this is extremely configurable
+              and simple to keep up-to-date using :ref:`happi`.
+
+How it works  This uses the z-position and beamline metadate from :ref:`happi`
+              to sort devices by position along the beamline. It relies on the
+              in/out interface from :ref:`pcdsdevices` to determine whether
+              each device is in the beam.
+
+Dependencies  - Uses :ref:`pydm` for the GUI
+              - Uses :ref:`happi` for device loading
+              - Uses modules like :ref:`pcdsdevices` to define device classes
+============  ================================================================
 
 pmgr
 ----
