@@ -259,24 +259,123 @@ Dependencies  - :ref:`ophyd`
 
 transfocate
 -----------
+============= ================================================================
+Repository    `transfocate <https://github.com/pcdshub/transfocate>`_,
+
+How we use it To define an :ref:`ophyd` device class for the MFX transfocator.
+
+Motivation    This is more complicated than a standard device and was being
+              developed parallel to the :ref:`pcdsdevices` repository.
+
+How it works  Defines the transfocator's PVs and some helper methods for
+              putting lens combinations in and out.
+
+Dependencies  :ref:`pcdsdevices`
+============= ================================================================
 
 hxrsnd
 ------
+============= ================================================================
+Repository    `hxrsnd <https://github.com/pcdshub/hxrsnd>`_,
+
+How we use it To define :ref:`ophyd` device classes and :ref:`bluesky`
+              scanning routines for the XCS split and delay.
+
+Motivation    This is more complicated than a standard device and was being
+              developed parallel to the :ref:`pcdsdevices` repository.
+
+How it works  Defines the SND's PVs and some helper methods for running
+              calibration scans and collecting data.
+
+Dependencies  :ref:`pcdsdevices`, ``pswalker``
+============= ================================================================
 
 nabs
 ----
+============= ================================================================
+Repository    `nabs <https://github.com/pcdshub/nabs>`_,
+
+How we use it To define lcls-specific :ref:`bluesky` utilities and to build
+              out the :ref:`bluesky` automation framework.
+
+Motivation    We want a cleaner version of the legacy ``pswalker`` module
+              to have shared code between different applications that need
+              to do similar things e.g. filter on beam drops, maximize
+              signals, etc.
+
+How it works  Defines an API for various plans, preprocessors, etc.
+
+Dependencies  :ref:`bluesky`
+============= ================================================================
 
 pcdsdaq
 -------
+============= ================================================================
+Repository    `pcdsdaq <https://github.com/pcdshub/pcdsdaq>`_,
+
+How we use it To define a :ref:`bluesky`-compatible control layer for the
+              LCLS1 data aquisition system (DAQ)
+
+Motivation    We need to be able to control the DAQ. Doing it in a
+              :ref:`bluesky`-compatible way means we can include the DAQ in
+              any :ref:`bluesky` plan.
+
+How it works  Wraps the ``pydaq.Control`` object and adheres closely to the
+              :ref:`bluesky` interface. You can configure the daq, do runs,
+              and include it as a readable device in scans.
+
+Dependencies  :ref:`bluesky`, :ref:`ophyd`, ``pydaq``
+============= ================================================================
 
 happi
 -----
+============= ================================================================
+Repository    `happi <https://github.com/pcdshub/happi`_,
+
+How we use it To store all of our device metadata in :ref:`device_config` and
+              reload these devices to create identical objects in every
+              application.
+
+Motivation    There must be a canonical way to load devices, consistent
+              accross all of our python applications.
+
+How it works  Defines container objects that represent real objects. These can
+              be stored in json or mongodb and be used to generate real
+              objects.
+
+Dependencies  No pcdshub dependencies
+============= ================================================================
 
 device_config
 -------------
+============= ================================================================
+Repository    `device_config <https://github.com/pcdshub/device_config`_,
+
+How we use it As a central file store of all the :ref:`happi` device
+              configuration information.
+
+Motivation    We need to store the information somewhere until we have a
+              mongodb set up.
+
+How it works  Stores a single json file.
+
+Dependencies  No pcdshub dependencies
+============= ================================================================
 
 elog
 ----
+============= ================================================================
+Repository    `elog <https://github.com/pcdshub/elog`_,
+
+How we use it To post information to the experiment elog.
+
+Motivation    We need python bindings for this so that we can update the elog
+              programattically or through the command line.
+
+How it works  https requests
+
+Dependencies  No pcdshub dependencies
+============= ================================================================
 
 External Modules
 ================
@@ -285,9 +384,50 @@ and explain the motivations behind the modules and behind why we use them.
 
 bluesky
 -------
+============= ================================================================
+Repository    `bluesky <https://github.com/nsls-ii/bluesky`_,
+
+How we use it As the scanning, process flow, and automation platform.
+
+Motivation    If we do scanning in a structured way, we can write cleaner code
+              that can continue to be maintained, and we can take advantage
+              of anything that the ``bluesky`` community has written as far
+              as visualizing data and controlling process flow.
+
+How it works  A central ``RunEngine`` object processes user-created
+              generators called ``plans``. These can do things like move
+              motors, read values, etc., but they can also be inspected to
+              see what the plan would do if we ran it, and they can be given
+              arbitrary adaptive logic since this is ``Python``.
+============= ================================================================
 
 opyhd
 -----
+============= ================================================================
+Repository    `ophyd <https://github.com/nsls-ii/ophyd`_,
+
+How we use it As the device control abstraction layer.
+
+Motivation    We need to have a sane convention for defining devices, and a
+              consistent way to define motion interfaces, callbacks, etc.
+
+How it works  ``Device`` subclasses register ``Component`` attributes so that
+              every instance knows which PVs to connect to.
+============= ================================================================
 
 pydm
 ----
+============= ================================================================
+Repository    `pydm <https://github.com/nsls-ii/pydm`_,
+
+How we use it ``pyqt``-based EPICS control screens.
+
+Motivation    We need to be able to include ``Python`` logic in our screens
+              for advanced applications, but we also need a way for new users
+              to create screens quickly using a drag-and-drop interface.
+
+How it works  This leverages qt ``designer`` as a drag-and-drop interface. A
+              rich ``Python`` API is provided for interacting with EPICS PVs
+              and with archiver data, among other things. Widgets are provided
+              that correspond to the legacy EDM widgets.
+============= ================================================================
