@@ -54,7 +54,7 @@ MNT   maintenance commit (refactoring, typos, etc.)
 REV   revert an earlier commit
 STY   style fix (whitespace, PEP8)
 TST   addition or modification of tests
-REL   related to releasing numpy
+REL   related to releasing your package
 WIP   Commit that is a work in progress
 ====  ===
 
