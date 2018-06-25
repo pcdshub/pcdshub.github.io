@@ -93,10 +93,11 @@ How we use it Scripts like ``mfxpython`` call on the ``hutch-python``
 
 Motivation    The load process for each hutch is essentially identical. This
               should be handled in shared code with simple hooks for
-              hutch-specific and experiment-specific additions. The best
-              alternaive is using ``IPython`` profiles which can get messy and
-              hard to manage, as we would need to occassionally go around and
-              rewrite boilerplate code.
+              hutch-specific and experiment-specific additions.
+              This was chosen instead of supporting ``IPython`` profiles
+              or massive ``beamline.py`` files because these can get messy and
+              hard to manage. This avoids the procedure of going around to
+              each deployment to update boilerplate code.
 
 How it works  A shared startup script is seeded with the contents of the
               ``conf.yml`` file. Shared operations are done the same way and
