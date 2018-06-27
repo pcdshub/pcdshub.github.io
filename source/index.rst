@@ -14,6 +14,7 @@ to PCDS directly.
    :caption: Getting Started
    :hidden:
 
+   overview.rst
    installation.rst
    development.rst
    faq.rst

@@ -33,8 +33,14 @@ import sphinx_rtd_theme
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['sphinx.ext.githubpages',
+extensions = ['sphinx.ext.autosectionlabel',
+              'sphinx.ext.githubpages',
               'IPython.sphinxext.ipython_directive']
+
+# Setup for custom stylesheets
+def setup(app):
+    # Make the tables in the motivation page not have scroll bars
+    app.add_stylesheet('custom.css')
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
