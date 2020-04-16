@@ -104,7 +104,7 @@ How it works  A shared startup script is seeded with the contents of the
               then the ``beamline.py`` and ``experiments`` user code is
               invoked.
 
-Dependencies  This is used by the :ref:`Hutch-specific repositories` to 
+Dependencies  This is used by the :ref:`Hutch-specific repositories` to
 
               Relies on most of our modules:
 

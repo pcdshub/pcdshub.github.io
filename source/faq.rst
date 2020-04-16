@@ -21,7 +21,7 @@ return a non-empty value:
 In bash:
 
 .. code:: shell
-   
+
    echo $DISPLAY
 
 or in the ``IPython`` shell itself:

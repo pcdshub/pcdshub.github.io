@@ -5,7 +5,7 @@ PCDS uses Conda to manage Python packaging. This allows users to quickly
 assemble virtual environments with different combinations of packages. An
 elementary understanding of what Conda is, and how to use it is assumed in the
 tutorial below. If you need a refresher, `here
-<https://conda.io/docs/user-guide/getting-started.html>`_ is a good place to start. 
+<https://conda.io/docs/user-guide/getting-started.html>`_ is a good place to start.
 
 Using an Existing Environment
 =============================
@@ -125,7 +125,7 @@ Miniconda installation. From a machine with internet access:
 .. code:: bash
 
    $ wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
-  
+
    $ bash miniconda.sh -b -p ~/miniconda
 
 This will give you a clean installation of Conda for you to play around with.

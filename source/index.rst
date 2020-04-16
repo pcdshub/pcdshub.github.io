@@ -7,7 +7,7 @@ number of new community software packages; ``Conda``, ``Git``, ``Python 3.x``
 e.t.c. The adoption of these tools gives a new chance to standardize the
 development workflow that we use for our Python tools. The purpose of this site
 is to cleanly describe the general use cases of these tools and how the apply
-to PCDS directly. 
+to PCDS directly.
 
 .. toctree::
    :maxdepth: 1

@@ -11,9 +11,9 @@ install:
 script:
   - |
     if [[ "${TRAVIS_BRANCH}" == "source" ]]; then
-      # Install doctr 
+      # Install doctr
       pip install doctr
-      # Create HTML documentation  
+      # Create HTML documentation
       make html
       #Publish docs.
       doctr deploy . --no-require-master --built-docs build/html --deploy-branch-name master

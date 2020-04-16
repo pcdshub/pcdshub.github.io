@@ -69,7 +69,7 @@ Merging Changes
 Once you are happy with your code, ``push`` it back to your fork on GitHub.
 
 .. code:: sh
-   
+
    $ git push origin my-feature
 
 You should now be able to create a Pull Request back to the original
