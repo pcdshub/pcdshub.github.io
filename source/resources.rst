@@ -21,9 +21,9 @@ External Tutorials and Guides
 
 Internal Access
 ===============
-If you would like to access this site from the internal SLAC intranet you need
-to a link to the proxy server in your Firefox profile. Under Settings ->
-Preferences -> Advanced -> Network -> Connection, enter the Proxy information
+If you would like to access this site from the internal SLAC intranet, you need
+to link to the proxy server in your Firefox profile. Under Settings ->
+Preferences -> Advanced -> Network -> Connection, enter the proxy information
 like so:
 
 .. image:: _static/proxy.png
