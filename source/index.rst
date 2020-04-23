@@ -17,6 +17,7 @@ to PCDS directly.
    overview.rst
    installation.rst
    development.rst
+   style.rst
    faq.rst
    resources.rst
 
