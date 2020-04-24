@@ -16,7 +16,10 @@ versions of the ``pcds`` environment. Activate the latest one by:
 
    $ source /reg/g/pcds/pyps/conda/py36env.sh
 
-If you want an older release, enter this as an argument to the shell script.
+If you want an older release, set the `PCDS_CONDA_VER` environment variable:
+
+   $ export PCDS_CONDA_VER=2.1.0
+
 The environment contained is **read-only**. You should not try to add packages
 to these environments. If you believe that a package should be included that is
 not present, contact PCDS or post an issue `here
