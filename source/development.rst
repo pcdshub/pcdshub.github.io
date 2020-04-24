@@ -5,7 +5,7 @@ It is recommended that PCDS Python projects are updated and maintained in the
 following way. It is assumed that all PCDS projects are maintained on either
 the SLAC Github or the PCDS specific site. This workflow was not invented here
 at SLAC, there are many helpful tutorials online like `this
-<https://guides.github.com/introduction/flow>`_ if you want more information.
+<https://guides.github.com/introduction/flow>`__ if you want more information.
 
 Creating a Local Checkout
 =========================
@@ -13,7 +13,7 @@ If you want to make changes to a repository, the first step is to create your
 own fork. This allows you to create feature branches without cluttering the
 main repository. It also assures that the main repository is only added to by
 Pull Request and review. Repositories can be forked from the GitHub site like
-`this <https://help.github.com/articles/fork-a-repo>`_. Once this repository is
+`this <https://help.github.com/articles/fork-a-repo>`__. Once this repository is
 created, you can clone into your own workspace.
 
 .. code:: sh

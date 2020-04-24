@@ -5,7 +5,8 @@ PCDS uses Conda to manage Python packaging. This allows users to quickly
 assemble virtual environments with different combinations of packages. An
 elementary understanding of what Conda is, and how to use it is assumed in the
 tutorial below. If you need a refresher, `here
-<https://conda.io/docs/user-guide/getting-started.html>`_ is a good place to start.
+<https://conda.io/docs/user-guide/getting-started.html>`__ is a good place to
+start.
 
 Using an Existing Environment
 =============================
@@ -23,7 +24,7 @@ If you want an older release, set the `PCDS_CONDA_VER` environment variable:
 The environment contained is **read-only**. You should not try to add packages
 to these environments. If you believe that a package should be included that is
 not present, contact PCDS or post an issue `here
-<https://github.com/pcdshub/pcds-envs/issues>`_ and we will include it a
+<https://github.com/pcdshub/pcds-envs/issues>`__ and we will include it a
 subsequent release.
 
 .. note::

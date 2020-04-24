@@ -1,12 +1,13 @@
 =======================
 PCDS Python Style Guide
 =======================
-As much as possible, PCDS code should be written with the following guidelines in
-mind.
+As much as possible, PCDS code should be written with the following guidelines
+in mind.
 
 Code Style
 ==========
-Our code follows `PEP-8`_ guidelines. Please look there for any code style matters. Since this is a very widely used standard, Google is also very helpful
+Our code follows `PEP-8`_ guidelines. Please look there for any code style
+matters. Since this is a very widely used standard, Google is also very helpful
 if you have any questions.
 
 Docstrings
@@ -23,11 +24,11 @@ General Rules:
 * Numeric values should be left unbackticked (e.g. 1).
 * Strings should be quoted (e.g. 'foo').
 * Use the ``:keyword:`` directive as appropriate (e.g. \:keyword:\`True\`).
-* Please use single backticks around all class/function/module/attribute names so
-  that the appropriate documentation can be properly cross-referenced. Please
-  check that the link is made properly. In some cases, you may have to specify
-  the role manually (e.g. ``:meth:`__init__```) and/or include the parent
-  ```InOutPositioner.remove```.
+* Please use single backticks around all class/function/module/attribute names
+  so that the appropriate documentation can be properly cross-referenced.
+  Please check that the link is made properly. In some cases, you may have to
+  specify the role manually (e.g. ``:meth:`__init__```) and/or include the
+  parent ```InOutPositioner.remove```.
 
 Module rules:
 -------------
@@ -103,8 +104,9 @@ Multi-line docstrings:
 ^^^^^^^^^^^^^^^^^^^^^^
 When a short summary is not sufficient, multi-line docstrings must be used.
 In these cases, an additional description can be given following the summary,
-separated by a blank line. Furthermore, please embellish this documentation with
-sections like Parameters or Attributes as specified by the `numpydoc`_ standard.
+separated by a blank line. Furthermore, please embellish this documentation
+with sections like Parameters or Attributes as specified by the `numpydoc`_
+standard.
 
 Some PCDS-specific rules for these docstrings:
 
@@ -115,7 +117,8 @@ Some PCDS-specific rules for these docstrings:
 * Class parameters should be described in the class's docstring under the
   Parameters section. Therefore, the :meth:`__init__` method can be blank.
 
-Please note: In list sections, the colon must be preceded by a space, or omitted if the type is absent.
+Please note: In list sections, the colon must be preceded by a space, or
+omitted if the type is absent.
 
 .. code::
 
@@ -167,5 +170,6 @@ External Guides
 
 Acknowledgements
 ================
-The docstring guidelines are derived/adapted from the `numpydoc`_ docstring guide and `PEP-257`_ guidelines.
-numpydoc is Copyright © 2019, numpydoc maintainers.
+The docstring guidelines are derived/adapted from the `numpydoc`_ docstring
+guide and `PEP-257`_ guidelines. numpydoc is Copyright © 2019, numpydoc
+maintainers.
