@@ -59,7 +59,7 @@ please give a longer description below the summary, separated by a blank line.
 
 Classes, Methods, and Functions
 -------------------------------
-If they not intended to be called by a user, a 1-liner will do. Otherwise,
+If they are not intended to be called by a user, a 1-liner will do. Otherwise,
 please also include sections as specified by `numpydoc`_.
 
 One-liner docstrings:
@@ -142,7 +142,7 @@ Extra Notes
 * Physical units should be specified in a parameter's description, not with its
   type.
 * Inline code blocks can be specified with double-backticks
-  (e.g. ````return 0````.
+  (e.g. ````return 0````).
 * Treat PV names as strings, surrounding them with single-quotes
   (e.g. 'CXI:JET:X').
 * Capitalize the first letter of a parameter's description.
