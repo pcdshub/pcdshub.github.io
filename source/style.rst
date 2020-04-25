@@ -4,8 +4,21 @@ PCDS Python Style Guide
 As much as possible, PCDS code should be written with the following guidelines
 in mind.
 
-Code Style
-==========
+Automatic style checking
+========================
+* Use `pre-commit <https://pre-commit.com>`_ to run a series of checks already
+  specified for a repository. Look `here
+  <https://github.com/pcdshub/pre-commit-hooks>`__ for more information on how
+  to set it up with our workflow.
+* `flake8 <https://flake8.pycqa.org>`_ is a useful tool that checks both style
+  and coding errors. It should be run as part of any Python project's
+  pre-commit configuration and is part of our CI workflow (i.e. PRs need to
+  pass flake8 to be merged).
+* We are also currently exploring the possibility of using `pydocstyle
+  <http://www.pydocstyle.org>`_ for docstring checking.
+
+Code
+====
 Our code follows `PEP-8`_ guidelines. Please look there for any code style
 matters. Since this is a very widely used standard, Google is also very helpful
 if you have any questions.
@@ -153,12 +166,6 @@ Extra Notes
   lowest-level of the name, while still using the full name for the
   cross-referencing link. For example, ``:exc:`~ophyd.utils.LimitError``` will
   be displayed as :exc:`~ophyd.utils.LimitError`.
-
-Automatic style checking
-========================
-* Use `pre-commit <https://pre-commit.com>`_ to run checks already specified for a repository. Look `here <https://github.com/pcdshub/pre-commit-hooks>`_ for more information on how to set it up with our workflow.
-* `flake8 <https://flake8.pycqa.org>`_ is a useful tool that checks both style and coding errors. It should be run as part of any Python project's pre-commit configuration and is part of our CI workflow (i.e. PRs need to pass flake8 to be merged).
-* We are exploring the possibility of using `pydocstyle <http://www.pydocstyle.org>`_ for docstring checking.
 
 External Guides
 ===============
