@@ -9,12 +9,12 @@ install:
   - pip install -r requirements.txt
 
 script:
+  - set -e
+  - pip install doctr
+  - make html
   - |
     if [[ "${TRAVIS_BRANCH}" == "source" ]]; then
-      # Install doctr
-      pip install doctr
-      # Create HTML documentation
-      make html
       #Publish docs.
+      echo "Deploying docs"
       doctr deploy . --no-require-master --built-docs build/html --deploy-branch-name master
     fi
