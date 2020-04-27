@@ -15,3 +15,9 @@ repos:
     -   id: check-xml
     -   id: check-yaml
         exclude: '^(conda-recipe/meta.yaml)$'
+
+-   repo: https://github.com/PyCQA/doc8
+    rev: 0.8.1rc3
+    hooks:
+    - id: doc8
+      args: ['--quiet']
