@@ -2,7 +2,7 @@
 PCDS Python Style Guide
 =======================
 As much as possible, PCDS code should be written with the following guidelines
-in mind.
+in mind. For examples, please look at the :ref:`Example Module`.
 
 Automatic style checking
 ========================
@@ -175,10 +175,6 @@ Extra Notes
   lowest-level of the name, while still using the full name for the
   cross-referencing link. For example, ``:exc:`~ophyd.utils.LimitError``` will
   be displayed as :exc:`~ophyd.utils.LimitError`.
-
-More Examples
-=============
-Please see the following for more examples, :ref:`Example Module`.
 
 External Guides
 ===============

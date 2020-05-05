@@ -2,6 +2,10 @@
 Recommended Resources
 =====================
 
+.. toctree::
+
+   example_module
+
 Packages We Recommend
 =====================
 * `Pytest <https://docs.pytest.org/en/latest>`_ -- Python Testing Framework
