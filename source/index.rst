@@ -14,12 +14,12 @@ to PCDS directly.
    :caption: Getting Started
    :hidden:
 
-   overview.rst
-   installation.rst
-   development.rst
-   style.rst
-   faq.rst
-   resources.rst
+   overview
+   installation
+   development
+   style
+   faq
+   resources
 
 .. toctree::
    :maxdepth: 1

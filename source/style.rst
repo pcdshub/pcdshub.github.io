@@ -33,8 +33,8 @@ Please write docstrings for all modules, classes, and functions/methods. In
 general, our docstrings should mostly follow `PEP-257`_ with the exception
 of an allowance for 2-line docstrings.
 
-General Rules:
---------------
+General Rules
+-------------
 * Always use ``"""triple double quotes"""`` for docstrings.
 * End all summaries/descriptions with periods.
 * Built-in types (like str and int) should not be quoted or backticked.
@@ -51,8 +51,8 @@ General Rules:
   specify the role manually (e.g. ``:meth:`__init__```) and/or include the
   parent ```InOutPositioner.remove```.
 
-Module rules:
--------------
+Module Rules
+------------
 Modules should have a brief summary of what is defined within it.
 The quotes should be on their own lines with no blank lines within or following
 the docstring. For example:
@@ -84,8 +84,8 @@ Classes, Methods, and Functions
 If they are not intended to be called by a user, a 1-liner will do. Otherwise,
 please also include sections as specified by `numpydoc`_.
 
-One-liner docstrings:
-^^^^^^^^^^^^^^^^^^^^^
+One-liner Docstrings
+^^^^^^^^^^^^^^^^^^^^
 `PEP-257`_ says "One-liners are for really obvious cases." In these cases, the
 quotes should be on the same line with no extra whitespace surrounding the
 docstring. Code should begin on the following line. For example:
@@ -96,8 +96,8 @@ docstring. Code should begin on the following line. For example:
         """A single attenuation blade, as implemented in the FEE."""
         state = Cpt(EpicsSignal, ':STATE', write_pv=':CMD')
 
-Two-liner docstrings:
-^^^^^^^^^^^^^^^^^^^^^
+Two-liner Docstrings
+^^^^^^^^^^^^^^^^^^^^
 Sometimes, a class or function is simple enough to warrant a one-liner but the
 docstring won't fit within `PEP-8`_'s 79 character limit. In this case, the
 quotes may be moved to separate lines, as shown below:
@@ -121,8 +121,8 @@ If the description still does not fit, you may use two lines:
         """
         return self.read_sig.get()
 
-Multi-line docstrings:
-^^^^^^^^^^^^^^^^^^^^^^
+Multi-line Docstrings
+^^^^^^^^^^^^^^^^^^^^^
 When a short summary is not sufficient, multi-line docstrings must be used.
 In these cases, an additional description can be given following the summary,
 separated by a blank line. Furthermore, please embellish this documentation
