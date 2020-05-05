@@ -144,23 +144,23 @@ it's a custom object; the reference will be made anyway.
 
 .. code::
 
-    class BaseGon(Device, BaseInterface):
+    def collect_prefixes(cls, device, kwargs):
         """
-        Basic goniometer, as present in XPP.
+        Gather all the special prefixes from a device's kwargs.
 
-        This requires eight motor PV prefixes to be passed in as keyword
-        arguments, and they are all labelled accordingly.
+        This must be called once during the ``__init__`` of a device with
+        UnrelatedComponent instances.
 
         Parameters
         ----------
-        name : str
-            A name to refer to the goniometer device.
-        ...
-        prefix_tilt : str
-            The EPICS base PV of the sample-stage's tilt motor.
+        device : ~ophyd.device.Device
+            The device to gather prefixes for. Typically this is just ``self``.
+
+        kwargs : dict
+            The kwargs dictionary with extra prefixes defined.
         """
 
-        hor = FCpt(IMS, '{self._prefix_hor}', kind='normal')
+        device.unrelated_prefixes = {}
 
 Extra Notes
 -----------
