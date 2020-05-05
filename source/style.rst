@@ -6,6 +6,9 @@ in mind.
 
 Automatic style checking
 ========================
+We currently use the following tools to automatically check our code. Please
+consider adding them to your workflow.
+
 * Use `pre-commit <https://pre-commit.com>`_ to run a series of checks already
   specified for a repository. Look `here
   <https://github.com/pcdshub/pre-commit-hooks>`__ for more information on how
@@ -21,7 +24,8 @@ Code
 ====
 Our code follows `PEP-8`_ guidelines. Please look there for any code style
 matters. Since this is a very widely used standard, Google is also very helpful
-if you have any questions.
+if you have any questions. To standardize our convention for strings, please
+use single quotes except for when the string itself contains single quotes.
 
 Docstrings
 ==========
@@ -36,7 +40,11 @@ General Rules:
 * Built-in types (like str and int) should not be quoted or backticked.
 * Numeric values should be left unbackticked (e.g. 1).
 * Strings should be quoted (e.g. 'foo').
-* Use the ``:keyword:`` directive as appropriate (e.g. \:keyword:\`True\`).
+* Built-in constants and keywords can be emphasized with backticks. An
+  appropriate reference to python docs with be automatically generated
+  (e.g. \`True\` or \`assert\`).
+* args and kwargs should be noted without asterisks (e.g. kwargs not
+  \*\*kwargs).
 * Please use single backticks around all class/function/module/attribute names
   so that the appropriate documentation can be properly cross-referenced.
   Please check that the link is made properly. In some cases, you may have to
@@ -131,7 +139,8 @@ Some PCDS-specific rules for these docstrings:
   Parameters section. Therefore, the :meth:`__init__` method can be blank.
 
 Please note: In list sections, the colon must be preceded by a space, or
-omitted if the type is absent.
+omitted if the type is absent. Also, the type should not be backticked, even if
+it's a custom object; the reference will be made anyway.
 
 .. code::
 
