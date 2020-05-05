@@ -176,6 +176,10 @@ Extra Notes
   cross-referencing link. For example, ``:exc:`~ophyd.utils.LimitError``` will
   be displayed as :exc:`~ophyd.utils.LimitError`.
 
+More Examples
+=============
+Please see the following for more examples, :ref:`Example Module`.
+
 External Guides
 ===============
 * `PEP-8 <https://www.python.org/dev/peps/pep-0008>`_ -- Official Style Guide for Python Code
