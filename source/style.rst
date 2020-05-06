@@ -43,8 +43,9 @@ General Rules
 * Built-in constants and keywords can be emphasized with backticks. An
   appropriate reference to python docs with be automatically generated
   (e.g. ```True``` or ```assert```).
-* args and kwargs should be noted without asterisks (e.g. ``kwargs`` not
-  ``**kwargs``).
+* If mentioning ``*args`` or ``**kwargs``, surround them with double-backticks
+  (e.g. ````**kwargs````), otherwise the asterisks will confuse Sphinx. This
+  is not necessary when listing it as a parameter.
 * Please use single backticks around all class/function/module/attribute names
   so that the appropriate documentation can be properly cross-referenced.
   Please check that the link is made properly. In some cases, you may need to
@@ -148,7 +149,7 @@ Some PCDS-specific rules for these docstrings:
 
     def collect_prefixes(cls, device, kwargs):
         """
-        Gather all the special prefixes from a device's kwargs.
+        Gather all the special prefixes from a device's ``**kwargs``.
 
         This must be called once during the ``__init__`` of a device with
         UnrelatedComponent instances.
