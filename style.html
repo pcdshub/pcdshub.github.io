@@ -1,0 +1,421 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>PCDS Python Style Guide &mdash; PCDS  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Common Questions and Issues" href="faq.html" />
+    <link rel="prev" title="Development" href="development.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> PCDS
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Development</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">PCDS Python Style Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#automatic-style-checking">Automatic style checking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#code">Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#docstrings">Docstrings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#general-rules">General Rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-rules">Module Rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#classes-methods-and-functions">Classes, Methods, and Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#one-liner-docstrings">One-liner Docstrings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#two-liner-docstrings">Two-liner Docstrings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#multi-line-docstrings">Multi-line Docstrings</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#extra-notes">Extra Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#external-guides">External Guides</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#acknowledgements">Acknowledgements</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Common Questions and Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Recommended Resources</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/slaclab">SLAC-wide GitHub</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pcdshub">PCDS GitHub</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PCDS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>PCDS Python Style Guide</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/style.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pcds-python-style-guide">
+<h1>PCDS Python Style Guide<a class="headerlink" href="#pcds-python-style-guide" title="Permalink to this headline">¶</a></h1>
+<p>As much as possible, PCDS code should be written with the following guidelines
+in mind. For examples, please look at the <a class="reference internal" href="example_module.html#example-module"><span class="std std-ref">Example Module</span></a>.</p>
+<div class="section" id="automatic-style-checking">
+<h2>Automatic style checking<a class="headerlink" href="#automatic-style-checking" title="Permalink to this headline">¶</a></h2>
+<p>We currently use the following tools to automatically check our code. Please
+consider adding them to your workflow.</p>
+<ul class="simple">
+<li><p>Use <a class="reference external" href="https://pre-commit.com">pre-commit</a> to run a series of checks already
+specified for a repository. Look <a class="reference external" href="https://github.com/pcdshub/pre-commit-hooks">here</a> for more information on how
+to set it up with our workflow.</p></li>
+<li><p><a class="reference external" href="https://flake8.pycqa.org">flake8</a> is a useful tool that checks both style
+and coding errors. It should be run as part of any Python project’s
+pre-commit configuration and is part of our CI workflow (i.e. PRs need to
+pass flake8 to be merged).</p></li>
+<li><p>We are also currently exploring the possibility of using <a class="reference external" href="http://www.pydocstyle.org">pydocstyle</a> for docstring checking.</p></li>
+</ul>
+</div>
+<div class="section" id="code">
+<h2>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h2>
+<p>Our code follows <a class="reference external" href="https://www.python.org/dev/peps/pep-0008">PEP-8</a> guidelines. Please look there for any code style
+matters. Since this is a very widely used standard, Google is also very helpful
+if you have any questions. To standardize our convention for strings, please
+use single quotes except for when the string itself contains single quotes.</p>
+</div>
+<div class="section" id="docstrings">
+<h2>Docstrings<a class="headerlink" href="#docstrings" title="Permalink to this headline">¶</a></h2>
+<p>Please write docstrings for all modules, classes, and functions/methods. In
+general, our docstrings should mostly follow <a class="reference external" href="https://www.python.org/dev/peps/pep-0257">PEP-257</a> with the exception
+of an allowance for 2-line docstrings.</p>
+<div class="section" id="general-rules">
+<h3>General Rules<a class="headerlink" href="#general-rules" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Always use <code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;triple</span> <span class="pre">double</span> <span class="pre">quotes&quot;&quot;&quot;</span></code> for docstrings.</p></li>
+<li><p>End all summaries/descriptions with periods.</p></li>
+<li><p>Built-in types (like str and int) should not be quoted or backticked.</p></li>
+<li><p>Numeric values should be left unbackticked (e.g. <code class="docutils literal notranslate"><span class="pre">1</span></code>).</p></li>
+<li><p>Strings should be quoted (e.g. <code class="docutils literal notranslate"><span class="pre">'foo'</span></code>).</p></li>
+<li><p>Built-in constants and keywords can be emphasized with backticks. An
+appropriate reference to python docs with be automatically generated
+(e.g. <code class="docutils literal notranslate"><span class="pre">`True`</span></code> or <code class="docutils literal notranslate"><span class="pre">`assert`</span></code>).</p></li>
+<li><p>If mentioning <code class="docutils literal notranslate"><span class="pre">*args</span></code> or <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code>, surround them with double-backticks
+(e.g. <code class="docutils literal notranslate"><span class="pre">``**kwargs``</span></code>), otherwise the asterisks will confuse Sphinx. This
+is not necessary when listing it as a parameter.</p></li>
+<li><p>Please use single backticks around all class/function/module/attribute names
+so that the appropriate documentation can be properly cross-referenced.
+Please check that the link is made properly. In some cases, you may need to
+specify the role manually (e.g. <code class="docutils literal notranslate"><span class="pre">:meth:`__init__`</span></code>) and/or include the
+parent (e.g. <code class="docutils literal notranslate"><span class="pre">`InOutPositioner.remove`</span></code>).</p></li>
+</ul>
+</div>
+<div class="section" id="module-rules">
+<h3>Module Rules<a class="headerlink" href="#module-rules" title="Permalink to this headline">¶</a></h3>
+<p>Modules should have a brief summary of what is defined within it.
+The quotes should be on their own lines with no blank lines within or following
+the docstring. For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Module for goniometers and sample stages used with them.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">ophyd</span> <span class="kn">import</span> <span class="n">Device</span>
+</pre></div>
+</div>
+<p>If you’re feeling extra helpful or the module is on the more complicated side,
+please give a longer description below the summary, separated by a blank line.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Module to centralize code related to devices that can be &#39;IN&#39; or &#39;OUT&#39;.</span>
+
+<span class="sd">The classes that are defined here can be used to create other devices that need</span>
+<span class="sd">methods such as :meth:`~InOutPositioner.insert` or</span>
+<span class="sd">:meth:`~InOutPositioner.remove` and the ability to mark discrete states as in</span>
+<span class="sd">the beam or out of the beam.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">math</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="classes-methods-and-functions">
+<h3>Classes, Methods, and Functions<a class="headerlink" href="#classes-methods-and-functions" title="Permalink to this headline">¶</a></h3>
+<p>If they are not intended to be called by a user, a 1-liner will do. Otherwise,
+please also include sections as specified by <a class="reference external" href="https://numpydoc.readthedocs.io/en/latest/format.html">numpydoc</a>.</p>
+<div class="section" id="one-liner-docstrings">
+<h4>One-liner Docstrings<a class="headerlink" href="#one-liner-docstrings" title="Permalink to this headline">¶</a></h4>
+<p><a class="reference external" href="https://www.python.org/dev/peps/pep-0257">PEP-257</a> says “One-liners are for really obvious cases.” In these cases, the
+quotes should be on the same line with no extra whitespace surrounding the
+docstring. Code should begin on the following line. For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">FeeFilter</span><span class="p">(</span><span class="n">InOutPositioner</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;A single attenuation blade, as implemented in the FEE.&quot;&quot;&quot;</span>
+    <span class="n">state</span> <span class="o">=</span> <span class="n">Cpt</span><span class="p">(</span><span class="n">EpicsSignal</span><span class="p">,</span> <span class="s1">&#39;:STATE&#39;</span><span class="p">,</span> <span class="n">write_pv</span><span class="o">=</span><span class="s1">&#39;:CMD&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="two-liner-docstrings">
+<h4>Two-liner Docstrings<a class="headerlink" href="#two-liner-docstrings" title="Permalink to this headline">¶</a></h4>
+<p>Sometimes, a class or function is simple enough to warrant a one-liner but the
+docstring won’t fit within <a class="reference external" href="https://www.python.org/dev/peps/pep-0008">PEP-8</a>’s 79 character limit. In this case, the
+quotes may be moved to separate lines, as shown below:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">screen</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Opens Epics motor expert screen e.g. for reseting motor after stalling.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">executable</span> <span class="o">=</span> <span class="s1">&#39;motor-expert-screen&#39;</span>
+</pre></div>
+</div>
+<p>If the description still does not fit, you may use two lines:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_raw_mesh_voltage</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Get the current acromag voltage that outputs to the HV supply, i.e</span>
+<span class="sd">    the voltage seen by the HV supply.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">read_sig</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="multi-line-docstrings">
+<h4>Multi-line Docstrings<a class="headerlink" href="#multi-line-docstrings" title="Permalink to this headline">¶</a></h4>
+<p>When a short summary is not sufficient, multi-line docstrings must be used.
+In these cases, an additional description can be given following the summary,
+separated by a blank line. Furthermore, please embellish this documentation
+with sections like Parameters or Attributes as specified by the <a class="reference external" href="https://numpydoc.readthedocs.io/en/latest/format.html">numpydoc</a>
+standard.</p>
+<p>Some PCDS-specific rules for these docstrings:</p>
+<ul class="simple">
+<li><p>Triple quotes should be on their own lines.</p></li>
+<li><p>The docstring should be followed by a blank line.</p></li>
+<li><p>The summary must be single line. If further explanation is necessary, move it
+to the description, which can be as long as you want.</p></li>
+<li><p>Class parameters should be described in the class’s docstring under the
+Parameters section. Therefore, the <code class="xref py py-meth docutils literal notranslate"><span class="pre">__init__()</span></code> method can be blank.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In listed sections like Parameters or Attributes, the colon must be
+preceded by a space, or omitted if the type is absent. Also, the type
+should not be backticked, even if it’s a custom object; the reference will
+be made anyway.</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">collect_prefixes</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">device</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Gather all the special prefixes from a device&#39;s ``**kwargs``.</span>
+
+<span class="sd">    This must be called once during the ``__init__`` of a device with</span>
+<span class="sd">    UnrelatedComponent instances.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    device : ~ophyd.device.Device</span>
+<span class="sd">        The device to gather prefixes for. Typically this is just ``self``.</span>
+
+<span class="sd">    kwargs : dict</span>
+<span class="sd">        The kwargs dictionary with extra prefixes defined.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">device</span><span class="o">.</span><span class="n">unrelated_prefixes</span> <span class="o">=</span> <span class="p">{}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="extra-notes">
+<h3>Extra Notes<a class="headerlink" href="#extra-notes" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Physical units should be specified in a parameter’s description, not with its
+type.</p></li>
+<li><p>Inline code blocks can be specified with double-backticks
+(e.g. <code class="docutils literal notranslate"><span class="pre">``return</span> <span class="pre">0``</span></code>).</p></li>
+<li><p>Treat PV names as strings, surrounding them with single-quotes
+(e.g. <code class="docutils literal notranslate"><span class="pre">'CXI:JET:X'</span></code>).</p></li>
+<li><p>Capitalize the first letter of a parameter’s description.</p></li>
+<li><p>Prepending a backticked dotted name with a tilde(~) will display only the
+lowest-level of the name, while still using the full name for the
+cross-referencing link. For example, <code class="docutils literal notranslate"><span class="pre">:exc:`~ophyd.utils.LimitError`</span></code> will
+be displayed as <code class="xref py py-exc docutils literal notranslate"><span class="pre">LimitError</span></code>.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="external-guides">
+<h2>External Guides<a class="headerlink" href="#external-guides" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.python.org/dev/peps/pep-0008">PEP-8</a> – Official Style Guide for Python Code</p></li>
+<li><p><a class="reference external" href="https://www.python.org/dev/peps/pep-0257">PEP-257</a> – Official conventions for Python docstrings</p></li>
+<li><p><a class="reference external" href="https://numpydoc.readthedocs.io/en/latest/format.html">numpydoc</a> – Useful for rules about sections</p></li>
+<li><p><a class="reference external" href="http://www.sphinx-doc.org/en/master/usage/restructuredtext/domains.html#the-python-domain">sphinx</a> – Generally helpful for working with sphinx directives</p></li>
+<li><p><a class="reference external" href="https://pythonhosted.org/an_example_pypi_project/sphinx.html">Example Project</a> – Some useful examples</p></li>
+</ul>
+</div>
+<div class="section" id="acknowledgements">
+<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this headline">¶</a></h2>
+<p>The docstring guidelines are derived/adapted from the <a class="reference external" href="https://numpydoc.readthedocs.io/en/latest/format.html">numpydoc</a> docstring
+guide and <a class="reference external" href="https://www.python.org/dev/peps/pep-0257">PEP-257</a> guidelines. numpydoc is Copyright © 2019, numpydoc
+maintainers.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="faq.html" class="btn btn-neutral float-right" title="Common Questions and Issues" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="development.html" class="btn btn-neutral float-left" title="Development" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, SLAC National Accelarator Laboratory
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

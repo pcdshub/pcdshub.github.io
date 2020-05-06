@@ -17,35 +17,37 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Recommended Resources" href="resources.html" />
-    <link rel="prev" title="Development" href="development.html" /> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
+    <link rel="prev" title="PCDS Python Style Guide" href="style.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -84,6 +86,7 @@
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="development.html">Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="style.html">PCDS Python Style Guide</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Common Questions and Issues</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#ipython-and-matplotlib">IPython and Matplotlib</a></li>
 </ul>
@@ -162,7 +165,7 @@
 <h1>Common Questions and Issues<a class="headerlink" href="#common-questions-and-issues" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#ipython-and-matplotlib" id="id1">IPython and Matplotlib</a></li>
+<li><p><a class="reference internal" href="#ipython-and-matplotlib" id="id1">IPython and Matplotlib</a></p></li>
 </ul>
 </div>
 <div class="section" id="ipython-and-matplotlib">
@@ -172,34 +175,34 @@ graphs using <code class="docutils literal notranslate"><span class="pre">matplo
 requires a little bit of configuration ahead of time. Even more unfortunate is
 the fact that issues rarely have tracebacks or error messages to follow.</p>
 <p>If you are having troubles creating plots on a machine that is not your own,
-the first thing to check is that you have X-11 forwarding enabled. The easiest
+the first thing to check is that you have X11 forwarding enabled. The easiest
 way to do this is make sure you always log in with the <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">-X</span></code> or <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">-Y</span></code>
 options. You can also check the environment variable <code class="docutils literal notranslate"><span class="pre">$DISPLAY</span></code> which should
 return a non-empty value:</p>
 <p>In bash:</p>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span>echo $DISPLAY
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="nv">$DISPLAY</span>
 </pre></div>
 </div>
 <p>or in the <code class="docutils literal notranslate"><span class="pre">IPython</span></code> shell itself:</p>
-<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;DISPLAY&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>If that isn’t the issue you should check that you have configured
+<p>If that isn’t the issue, you should check that you have configured
 <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> to use <code class="docutils literal notranslate"><span class="pre">Qt</span></code> as the backend for all generated plots. This is
 done automatically by the <code class="docutils literal notranslate"><span class="pre">hutch-python</span></code> start-up scripts, but if you are
 entering an <code class="docutils literal notranslate"><span class="pre">IPython</span></code> session of your own, you should configure the backend
 by typing:</p>
-<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">matplotlib</span> <span class="n">qt</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">matplotlib</span> <span class="n">qt</span>
 </pre></div>
 </div>
-<p>Finally if you are seeing the created plot but it doesn’t update during your
-Bluesky scan, you need to configure a kicker. This is installed in the
+<p>Finally, if you are seeing the created plot but it doesn’t update during your
+<code class="docutils literal notranslate"><span class="pre">Bluesky</span></code> scan, you need to configure a kicker. This is installed in the
 <code class="docutils literal notranslate"><span class="pre">RunEngine</span></code> event loop that updates your plots when it isn’t busy executing
 your scan. Once again, this is configured for you in the <code class="docutils literal notranslate"><span class="pre">hutch_python</span></code>
-<code class="docutils literal notranslate"><span class="pre">IPython</span></code> shell, but if you are using a basic <code class="docutils literal notranslate"><span class="pre">IPython</span></code> shell this is an
+<code class="docutils literal notranslate"><span class="pre">IPython</span></code> shell, but if you are using a basic <code class="docutils literal notranslate"><span class="pre">IPython</span></code> shell, this is an
 important step.</p>
-<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bluesky.utils</span> <span class="k">import</span> <span class="n">install_kicker</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bluesky.utils</span> <span class="kn">import</span> <span class="n">install_kicker</span>
 <span class="n">install_kicker</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -217,7 +220,7 @@ important step.</p>
         <a href="resources.html" class="btn btn-neutral float-right" title="Recommended Resources" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="development.html" class="btn btn-neutral" title="Development" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="style.html" class="btn btn-neutral float-left" title="PCDS Python Style Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -226,7 +229,7 @@ important step.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, SLAC National Accelarator Laboratory.
+        &copy; Copyright 2020, SLAC National Accelarator Laboratory
 
     </p>
   </div>
@@ -243,32 +246,16 @@ important step.</p>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  <script type="text/javascript" src="_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

@@ -1,0 +1,556 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Example Module &mdash; PCDS  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Recommended Resources" href="resources.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> PCDS
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="style.html">PCDS Python Style Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Common Questions and Issues</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="resources.html">Recommended Resources</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Example Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resources.html#packages-we-recommend">Packages We Recommend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resources.html#external-tutorials-and-guides">External Tutorials and Guides</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resources.html#internal-access">Internal Access</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/slaclab">SLAC-wide GitHub</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pcdshub">PCDS GitHub</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PCDS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="resources.html">Recommended Resources</a> &raquo;</li>
+        
+      <li>Example Module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/example_module.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="example-module">
+<h1>Example Module<a class="headerlink" href="#example-module" title="Permalink to this headline">¶</a></h1>
+<p>The following is a module with examples of most, if not all, forms of
+docstrings following the <a class="reference internal" href="style.html#pcds-python-style-guide"><span class="std std-ref">PCDS Python Style Guide</span></a>. Please let us know if
+anything is unclear or conflicts with the style guide.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Module to define `Slits` classes.</span>
+
+<span class="sd">The SLAC EPICS motor record contains an extra set of records to abstract four</span>
+<span class="sd">axes into a Slits object. This allows an operator to manipulate the center and</span>
+<span class="sd">width in two dimensions of a small aperture. The classes below allow both</span>
+<span class="sd">individual parameters of the aperture and the Slit as a whole to be controlled</span>
+<span class="sd">and scanned. The `Slits` class instantiates four sub-devices: `~Slits.xwidth`,</span>
+<span class="sd">`~Slits.xcenter`, `~Slits.ycenter`, `~Slits.ywidth`. These are each represented</span>
+<span class="sd">by a `SlitPositioner`. The main `Slits` class assumes that most of</span>
+<span class="sd">the manipulation will be done on the size of the aperture not the position,</span>
+<span class="sd">however, if control of the center is desired the ``center`` sub-devices can be</span>
+<span class="sd">used.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
+
+<span class="kn">from</span> <span class="nn">ophyd</span> <span class="kn">import</span> <span class="n">Component</span> <span class="k">as</span> <span class="n">Cpt</span>
+<span class="kn">from</span> <span class="nn">ophyd</span> <span class="kn">import</span> <span class="n">Device</span>
+<span class="kn">from</span> <span class="nn">ophyd</span> <span class="kn">import</span> <span class="n">DynamicDeviceComponent</span> <span class="k">as</span> <span class="n">DDCpt</span>
+<span class="kn">from</span> <span class="nn">ophyd</span> <span class="kn">import</span> <span class="n">EpicsSignal</span><span class="p">,</span> <span class="n">EpicsSignalRO</span>
+<span class="kn">from</span> <span class="nn">ophyd</span> <span class="kn">import</span> <span class="n">FormattedComponent</span> <span class="k">as</span> <span class="n">FCpt</span>
+<span class="kn">from</span> <span class="nn">ophyd.epics_motor</span> <span class="kn">import</span> <span class="n">EpicsMotor</span>
+<span class="kn">from</span> <span class="nn">ophyd.pv_positioner</span> <span class="kn">import</span> <span class="n">PVPositioner</span>
+<span class="kn">from</span> <span class="nn">ophyd.signal</span> <span class="kn">import</span> <span class="n">SignalRO</span>
+<span class="kn">from</span> <span class="nn">ophyd.status</span> <span class="kn">import</span> <span class="n">wait</span> <span class="k">as</span> <span class="n">status_wait</span>
+
+<span class="kn">from</span> <span class="nn">.interface</span> <span class="kn">import</span> <span class="n">BaseInterface</span><span class="p">,</span> <span class="n">FltMvInterface</span><span class="p">,</span> <span class="n">MvInterface</span>
+<span class="kn">from</span> <span class="nn">.sensors</span> <span class="kn">import</span> <span class="n">RTD</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">SlitPositioner</span><span class="p">(</span><span class="n">PVPositioner</span><span class="p">,</span> <span class="n">FltMvInterface</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Abstraction of a Slit axis.</span>
+
+<span class="sd">    Each adjustable parameter of the slit (center, width) can be modeled as a</span>
+<span class="sd">    motor in itself, even though each controls two different actual motors in</span>
+<span class="sd">    reality, this gives a convienent interface for adjusting the aperture size</span>
+<span class="sd">    and location with out backwards calculating motor positions.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    prefix : str</span>
+<span class="sd">        The prefix location of the slits, e.g. &#39;MFX:DG2&#39;.</span>
+
+<span class="sd">    name : str</span>
+<span class="sd">        Alias for the axis.</span>
+
+<span class="sd">    slit_type : {&#39;XWIDTH&#39;, &#39;YWIDTH&#39;, &#39;XCENTER&#39;, &#39;YCENTER&#39;}</span>
+<span class="sd">        The aspect of the slit position you would like to control with this</span>
+<span class="sd">        specific motor.</span>
+
+<span class="sd">    limits : tuple, optional</span>
+<span class="sd">        Limits on the motion of the positioner. By default, the limits on the</span>
+<span class="sd">        setpoint PV are used if `None` is given.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    `ophyd.PVPositioner`</span>
+<span class="sd">        SlitPositioner inherits directly from `~ophyd.PVPositioner`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">readback</span> <span class="o">=</span> <span class="n">FCpt</span><span class="p">(</span><span class="n">EpicsSignalRO</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">{self.prefix}</span><span class="s1">:ACTUAL_</span><span class="si">{self._dirlong}</span><span class="s1">&#39;</span><span class="p">,</span>
+                    <span class="n">auto_monitor</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hinted&#39;</span><span class="p">)</span>
+    <span class="n">setpoint</span> <span class="o">=</span> <span class="n">FCpt</span><span class="p">(</span><span class="n">EpicsSignal</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">{self.prefix}</span><span class="s1">:</span><span class="si">{self._dirshort}</span><span class="s1">_REQ&#39;</span><span class="p">,</span>
+                    <span class="n">auto_monitor</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;normal&#39;</span><span class="p">)</span>
+    <span class="n">done</span> <span class="o">=</span> <span class="n">Cpt</span><span class="p">(</span><span class="n">EpicsSignalRO</span><span class="p">,</span> <span class="s1">&#39;:DMOV&#39;</span><span class="p">,</span> <span class="n">auto_monitor</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;omitted&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prefix</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">slit_type</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">limits</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="c1"># Private PV names to deal with complex naming schema</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dirlong</span> <span class="o">=</span> <span class="n">slit_type</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dirshort</span> <span class="o">=</span> <span class="n">slit_type</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span>
+        <span class="c1"># Initalize PVPositioner</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">prefix</span><span class="p">,</span> <span class="n">limits</span><span class="o">=</span><span class="n">limits</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">egu</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;EnGineering Units.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_egu</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">readback</span><span class="o">.</span><span class="n">_read_pv</span><span class="o">.</span><span class="n">units</span>
+
+    <span class="k">def</span> <span class="nf">_setup_move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">position</span><span class="p">):</span>
+        <span class="c1"># This is subclassed because we need `wait` to be set to False unlike</span>
+        <span class="c1"># the default PVPositioner method. `wait` set to True will not return</span>
+        <span class="c1"># until the move has completed</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">.setpoint = </span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">position</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setpoint</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="n">wait</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">Slits</span><span class="p">(</span><span class="n">Device</span><span class="p">,</span> <span class="n">MvInterface</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Beam slits with combined motion for center and width.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    prefix : str</span>
+<span class="sd">        The EPICS base PV of the motor.</span>
+
+<span class="sd">    name : str, optional</span>
+<span class="sd">        The name of the offset mirror.</span>
+
+<span class="sd">    nominal_aperture : float, optional</span>
+<span class="sd">        Nominal slit size that will encompass the beam without blocking.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    The slits represent a unique device when forming the lightpath because</span>
+<span class="sd">    whether the beam is being blocked or not depends on the pointing. In order</span>
+<span class="sd">    to create an estimate that will warn operators of &#39;closed&#39; slits, we set a</span>
+<span class="sd">    `nominal_aperture` for each unique device along the beamline. This is</span>
+<span class="sd">    value is considered the smallest the slit aperture can become without</span>
+<span class="sd">    blocking the beamline. Both the `xwidth` and the `ywidth`(height) need to</span>
+<span class="sd">    exceed this `nominal_aperture` for the slits to be considered removed.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">xwidth</span> <span class="o">=</span> <span class="n">Cpt</span><span class="p">(</span><span class="n">SlitPositioner</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">slit_type</span><span class="o">=</span><span class="s1">&#39;XWIDTH&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hinted&#39;</span><span class="p">)</span>
+    <span class="n">ywidth</span> <span class="o">=</span> <span class="n">Cpt</span><span class="p">(</span><span class="n">SlitPositioner</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">slit_type</span><span class="o">=</span><span class="s1">&#39;YWIDTH&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hinted&#39;</span><span class="p">)</span>
+    <span class="n">nominal_aperture</span> <span class="o">=</span> <span class="n">Cpt</span><span class="p">(</span><span class="n">SignalRO</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;normal&#39;</span><span class="p">)</span>
+    <span class="n">xcenter</span> <span class="o">=</span> <span class="n">Cpt</span><span class="p">(</span><span class="n">SlitPositioner</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">slit_type</span><span class="o">=</span><span class="s1">&#39;XCENTER&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;normal&#39;</span><span class="p">)</span>
+    <span class="n">ycenter</span> <span class="o">=</span> <span class="n">Cpt</span><span class="p">(</span><span class="n">SlitPositioner</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">slit_type</span><span class="o">=</span><span class="s1">&#39;YCENTER&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;normal&#39;</span><span class="p">)</span>
+    <span class="n">blocked</span> <span class="o">=</span> <span class="n">Cpt</span><span class="p">(</span><span class="n">EpicsSignalRO</span><span class="p">,</span> <span class="s1">&#39;:BLOCKED&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;omitted&#39;</span><span class="p">)</span>
+    <span class="n">open_cmd</span> <span class="o">=</span> <span class="n">Cpt</span><span class="p">(</span><span class="n">EpicsSignal</span><span class="p">,</span> <span class="s1">&#39;:OPEN&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;omitted&#39;</span><span class="p">)</span>
+    <span class="n">close_cmd</span> <span class="o">=</span> <span class="n">Cpt</span><span class="p">(</span><span class="n">EpicsSignal</span><span class="p">,</span> <span class="s1">&#39;:CLOSE&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;omitted&#39;</span><span class="p">)</span>
+    <span class="n">block_cmd</span> <span class="o">=</span> <span class="n">Cpt</span><span class="p">(</span><span class="n">EpicsSignal</span><span class="p">,</span> <span class="s1">&#39;:BLOCK&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;omitted&#39;</span><span class="p">)</span>
+    <span class="c1"># Subscription information</span>
+    <span class="n">SUB_STATE</span> <span class="o">=</span> <span class="s1">&#39;sub_state_changed&#39;</span>
+    <span class="n">_default_sub</span> <span class="o">=</span> <span class="n">SUB_STATE</span>
+    <span class="c1"># QIcon for UX</span>
+    <span class="n">_icon</span> <span class="o">=</span> <span class="s1">&#39;fa.th-large&#39;</span>
+    <span class="n">tab_whitelist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;open&#39;</span><span class="p">,</span> <span class="s1">&#39;close&#39;</span><span class="p">,</span> <span class="s1">&#39;block&#39;</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">nominal_aperture</span><span class="o">=</span><span class="mf">5.0</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_has_subscribed</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="c1"># Initialize nominal_aperture behind the scenes</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nominal_aperture</span><span class="o">.</span><span class="n">_readback</span> <span class="o">=</span> <span class="n">nominal_aperture</span>
+        <span class="c1"># Modify Kind of center readbacks</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">xcenter</span><span class="o">.</span><span class="n">readback</span><span class="o">.</span><span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;normal&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ycenter</span><span class="o">.</span><span class="n">readback</span><span class="o">.</span><span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;normal&#39;</span>
+
+    <span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">wait</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">moved_cb</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set the dimensions of the width/height of the gap to width paramater.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ---------</span>
+<span class="sd">        size : float or tuple of float</span>
+<span class="sd">            Target size for slits in both x and y axis. Either specify as a</span>
+<span class="sd">            tuple for a rectangular aperture, ``(width, height)``, or set both</span>
+<span class="sd">            with single floating point value to use a square opening.</span>
+
+<span class="sd">        wait : bool</span>
+<span class="sd">            If `True`, block until move is completed.</span>
+
+<span class="sd">        timeout : float, optional</span>
+<span class="sd">            Maximum time for the motion. If `None` is given, the default value</span>
+<span class="sd">            of `xwidth` and `ywidth` positioners is used.</span>
+
+<span class="sd">        moved_cb : callable, optional</span>
+<span class="sd">            Function to be run when the operation finishes. This callback</span>
+<span class="sd">            should not expect any arguments or keywords.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        status : `AndStatus`</span>
+<span class="sd">            Logical combination of the request to both horizontal and vertical</span>
+<span class="sd">            motors.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># Check for rectangular setpoint</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+            <span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span> <span class="o">=</span> <span class="n">size</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">width</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="n">size</span><span class="p">,</span> <span class="n">size</span>
+        <span class="c1"># Instruct both width and height then combine the output status</span>
+        <span class="n">x_stat</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">xwidth</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">wait</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+        <span class="n">y_stat</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ywidth</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">height</span><span class="p">,</span> <span class="n">wait</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+        <span class="n">status</span> <span class="o">=</span> <span class="n">x_stat</span> <span class="o">&amp;</span> <span class="n">y_stat</span>
+        <span class="c1"># Add our callback if one was given</span>
+        <span class="k">if</span> <span class="n">moved_cb</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">status</span><span class="o">.</span><span class="n">add_callback</span><span class="p">(</span><span class="n">moved_cb</span><span class="p">)</span>
+        <span class="c1"># Wait if instructed to do so. Stop the motors if interrupted</span>
+        <span class="k">if</span> <span class="n">wait</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">status_wait</span><span class="p">(</span><span class="n">status</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">xwidth</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">ywidth</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+                <span class="k">raise</span>
+        <span class="k">return</span> <span class="n">status</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">inserted</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Whether the slits are inserted into the beampath.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">current_aperture</span><span class="p">)</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">nominal_aperture</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">removed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Whether the slits are entirely removed from the beampath.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">inserted</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">current_aperture</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Current size of the aperture. Returns a tuple in the form</span>
+<span class="sd">        ``(width, height)``.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xwidth</span><span class="o">.</span><span class="n">position</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ywidth</span><span class="o">.</span><span class="n">position</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">position</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_aperture</span>
+
+    <span class="k">def</span> <span class="nf">remove</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">wait</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Open the slits to unblock the beam.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        size : float, optional</span>
+<span class="sd">            Open the slits to a specific size. Defaults to `.nominal_aperture`.</span>
+
+<span class="sd">        wait : bool, optional</span>
+<span class="sd">            Wait for the status object to complete the move before returning.</span>
+
+<span class="sd">        timeout : float, optional</span>
+<span class="sd">            Maximum time to wait for the motion. If `None`, the default timeout</span>
+<span class="sd">            for this positioner is used.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        MoveStatus</span>
+<span class="sd">            `~ophyd.Status` object based on move completion.</span>
+
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">        :meth:`Slits.move`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># Use nominal_aperture by default</span>
+        <span class="n">size</span> <span class="o">=</span> <span class="n">size</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">nominal_aperture</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">wait</span><span class="o">=</span><span class="n">wait</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Alias for the move method, here for ``bluesky`` compatibilty.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">wait</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">open</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Uses the built-in &#39;OPEN&#39; record to move open the aperture.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">open_cmd</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Close the slits to have an aperture of 0mm on each side.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">close_cmd</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">block</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Overlap the slits to block the beam.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">block_cmd</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">stage</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Store the initial values of the aperture position before scanning.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_original_vals</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">xwidth</span><span class="o">.</span><span class="n">setpoint</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">xwidth</span><span class="o">.</span><span class="n">readback</span><span class="o">.</span><span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_original_vals</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">ywidth</span><span class="o">.</span><span class="n">setpoint</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ywidth</span><span class="o">.</span><span class="n">readback</span><span class="o">.</span><span class="n">value</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">stage</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">subscribe</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cb</span><span class="p">,</span> <span class="n">event_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">run</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Subscribe to changes of the slits.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        cb : callable</span>
+<span class="sd">            Callback to be run.</span>
+
+<span class="sd">        event_type : str, optional</span>
+<span class="sd">            Type of event to run callback on.</span>
+
+<span class="sd">        run : bool, optional</span>
+<span class="sd">            Run the callback immediately.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># Avoid making child subscriptions unless a client cares</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_has_subscribed</span><span class="p">:</span>
+            <span class="c1"># Subscribe to changes in aperture</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">xwidth</span><span class="o">.</span><span class="n">readback</span><span class="o">.</span><span class="n">subscribe</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_aperture_changed</span><span class="p">,</span>
+                                           <span class="n">run</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">ywidth</span><span class="o">.</span><span class="n">readback</span><span class="o">.</span><span class="n">subscribe</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_aperture_changed</span><span class="p">,</span>
+                                           <span class="n">run</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_has_subscribed</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">subscribe</span><span class="p">(</span><span class="n">cb</span><span class="p">,</span> <span class="n">event_type</span><span class="o">=</span><span class="n">event_type</span><span class="p">,</span> <span class="n">run</span><span class="o">=</span><span class="n">run</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_aperture_changed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Callback run when slit size is adjusted.&quot;&quot;&quot;</span>
+        <span class="c1"># Avoid duplicate keywords</span>
+        <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;sub_type&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;obj&#39;</span><span class="p">,</span>      <span class="kc">None</span><span class="p">)</span>
+        <span class="c1"># Run subscriptions</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_run_subs</span><span class="p">(</span><span class="n">sub_type</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">SUB_STATE</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_rtd_fields</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">attr_base</span><span class="p">,</span> <span class="n">range_</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">padding</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">range_</span><span class="p">)</span><span class="o">//</span><span class="mi">10</span> <span class="o">+</span> <span class="mi">2</span>
+    <span class="n">defn</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">range_</span><span class="p">:</span>
+        <span class="n">attr</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{attr}{i}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">attr</span><span class="o">=</span><span class="n">attr_base</span><span class="p">,</span> <span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">suffix</span> <span class="o">=</span> <span class="s1">&#39;:RTD:</span><span class="si">{i}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="n">padding</span><span class="p">))</span>
+        <span class="n">defn</span><span class="p">[</span><span class="n">attr</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">suffix</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">defn</span>
+
+
+<span class="k">class</span> <span class="nc">PowerSlits</span><span class="p">(</span><span class="n">Device</span><span class="p">,</span> <span class="n">BaseInterface</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    &#39;SL*:POWER&#39;.</span>
+
+<span class="sd">    Power slits variant of slits. The XTES design.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    prefix : str</span>
+<span class="sd">        The PV base of the device.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">top</span> <span class="o">=</span> <span class="n">FCpt</span><span class="p">(</span><span class="n">EpicsMotor</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">{self.prefix}</span><span class="s1">:MMS:TOP&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;normal&#39;</span><span class="p">)</span>
+    <span class="n">bottom</span> <span class="o">=</span> <span class="n">FCpt</span><span class="p">(</span><span class="n">EpicsMotor</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">{self.prefix}</span><span class="s1">:MMS:BOTTOM&#39;</span><span class="p">)</span>
+    <span class="n">north</span> <span class="o">=</span> <span class="n">FCpt</span><span class="p">(</span><span class="n">EpicsMotor</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">{self.prefix}</span><span class="s1">:MMS:NORTH&#39;</span><span class="p">)</span>
+    <span class="n">south</span> <span class="o">=</span> <span class="n">FCpt</span><span class="p">(</span><span class="n">EpicsMotor</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">{self.prefix}</span><span class="s1">:MMS:SOUTH&#39;</span><span class="p">)</span>
+    <span class="n">rtds</span> <span class="o">=</span> <span class="n">DDCpt</span><span class="p">(</span><span class="n">_rtd_fields</span><span class="p">(</span><span class="n">RTD</span><span class="p">,</span> <span class="s1">&#39;rtd&#39;</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">)))</span>
+    <span class="n">fsw</span> <span class="o">=</span> <span class="n">Cpt</span><span class="p">(</span><span class="n">EpicsSignalRO</span><span class="p">,</span> <span class="s1">&#39;:FSW&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;normal&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="resources.html" class="btn btn-neutral float-left" title="Recommended Resources" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, SLAC National Accelarator Laboratory
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

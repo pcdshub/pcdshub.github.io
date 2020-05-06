@@ -17,13 +17,20 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -31,21 +38,16 @@
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Installation" href="installation.html" />
     <link rel="prev" title="PCDS" href="index.html" /> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -94,7 +96,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#modules">Modules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#typhon">typhon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#typhos">typhos</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pcdsdevices">pcdsdevices</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#transfocate">transfocate</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#hxrsnd">hxrsnd</a></li>
@@ -115,6 +117,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="development.html">Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="style.html">PCDS Python Style Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="faq.html">Common Questions and Issues</a></li>
 <li class="toctree-l1"><a class="reference internal" href="resources.html">Recommended Resources</a></li>
 </ul>
@@ -191,13 +194,13 @@
 <p>The pcdshub python 3 software stack is being developed with the following
 design goals:</p>
 <ul class="simple">
-<li>Modules should have a well-defined, restrained scope.</li>
-<li>Code should be readable, reusable, and sharable.</li>
-<li>Each piece of data should have a canonical source for all applications.</li>
-<li>Deployment and testing should be automated.</li>
-<li>The open source community should be maximally leveraged.</li>
+<li><p>Modules should have a well-defined, restrained scope.</p></li>
+<li><p>Code should be readable, reusable, and sharable.</p></li>
+<li><p>Each piece of data should have a canonical source for all applications.</p></li>
+<li><p>Deployment and testing should be automated.</p></li>
+<li><p>The open source community should be maximally leveraged.</p></li>
 </ul>
-<p>These design goals result in a matrix of github repositories and python
+<p>These design goals result in a matrix of Github repositories and python
 modules that are individually understandable, but together obscure the
 bigger picture. The goal of this page is to explain at a high level how
 each application works and what each repository does.</p>
@@ -209,10 +212,10 @@ as well as some <a class="reference internal" href="#external-modules"><span cla
 are developed at SLAC and some which are not.</p>
 <p>For each project, this page will explain:</p>
 <ul class="simple">
-<li>The motivation behind the project: what problem is being solved?</li>
-<li>How the project works at a high level</li>
-<li>What other projects does this one rely on?</li>
-<li>What other projects rely on this one?</li>
+<li><p>The motivation behind the project: what problem is being solved?</p></li>
+<li><p>How the project works at a high level</p></li>
+<li><p>What other projects does this one rely on?</p></li>
+<li><p>What other projects rely on this one?</p></li>
 </ul>
 </div>
 <div class="section" id="definitions">
@@ -228,100 +231,100 @@ for other applications to leverage.</p>
 <h2>Applications<a class="headerlink" href="#applications" title="Permalink to this headline">¶</a></h2>
 <p>This section will list our applications and explain the motivations
 behind them, as well as their dependencies.
-This includes only repositories that are hosted on pcdshub with a
+This includes only repositories that are hosted on pcdshub and have a
 corresponding online documentation page.</p>
 <div class="section" id="hutch-specific-repositories">
 <h3>Hutch-specific Repositories<a class="headerlink" href="#hutch-specific-repositories" title="Permalink to this headline">¶</a></h3>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="17%" />
-<col width="83%" />
+<col style="width: 17%" />
+<col style="width: 83%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>Repository</td>
-<td><a class="reference external" href="https://github.com/pcdshub/amo">amo</a>,
+<tbody>
+<tr class="row-odd"><td><p>Repository</p></td>
+<td><p><a class="reference external" href="https://github.com/pcdshub/amo">amo</a>,
 <a class="reference external" href="https://github.com/pcdshub/sxr">sxr</a>,
 <a class="reference external" href="https://github.com/pcdshub/xpp">xpp</a>,
 <a class="reference external" href="https://github.com/pcdshub/xcs">xcs</a>,
 <a class="reference external" href="https://github.com/pcdshub/mfx">mfx</a>,
 <a class="reference external" href="https://github.com/pcdshub/cxi">cxi</a>,
-and <a class="reference external" href="https://github.com/pcdshub/mec">mec</a></td>
+and <a class="reference external" href="https://github.com/pcdshub/mec">mec</a></p></td>
 </tr>
-<tr class="row-even"><td>How we use it</td>
-<td>We put softlinks like <code class="docutils literal notranslate"><span class="pre">mfx3</span></code> in the hutch opr’s path. These
+<tr class="row-even"><td><p>How we use it</p></td>
+<td><p>We put softlinks like <code class="docutils literal notranslate"><span class="pre">mfx3</span></code> in the hutch opr’s path. These
 link to scripts like <code class="docutils literal notranslate"><span class="pre">mfxpython</span></code> in the repository that launch
 a convenient <code class="docutils literal notranslate"><span class="pre">IPython</span></code> environment for controlling the hutch
 and automating DAQ data collection. The repository is used to
 host hutch-specific classes, devices, and configurations that
-may later be merged into a shared module.</td>
+may later be merged into a shared module.</p></td>
 </tr>
-<tr class="row-odd"><td>Motivation</td>
-<td>We need dedicated landing areas for hutch-specific and
+<tr class="row-odd"><td><p>Motivation</p></td>
+<td><p>We need dedicated landing areas for hutch-specific and
 experiment-specific code to satisfy the needs of a constantly
 shifting environment. This can’t go into a module because the
 module can’t control which python environment you launch it
-from.</td>
+from.</p></td>
 </tr>
-<tr class="row-even"><td>How it works</td>
-<td>A version file e.g. <code class="docutils literal notranslate"><span class="pre">mfxversion</span></code> chooses a shared conda
+<tr class="row-even"><td><p>How it works</p></td>
+<td><p>A version file e.g. <code class="docutils literal notranslate"><span class="pre">mfxversion</span></code> chooses a shared conda
 environment and may set up development package overrides. The
 <code class="docutils literal notranslate"><span class="pre">mfxpython</span></code> script enters this environment using
 <a class="reference internal" href="#hutch-python"><span class="std std-ref">hutch-python</span></a> and a brief <code class="docutils literal notranslate"><span class="pre">conf.yml</span></code> configuration file.
 These coordinate the loading of shared services and provide
-hooks for the hutch-specific code.</td>
+hooks for the hutch-specific code.</p></td>
 </tr>
-<tr class="row-odd"><td>Dependencies</td>
-<td>This may vary between hutches, but all hutches rely on
+<tr class="row-odd"><td><p>Dependencies</p></td>
+<td><p>These may vary between hutches, but all hutches rely on
 <a class="reference internal" href="#hutch-python"><span class="std std-ref">hutch-python</span></a> as the launcher and configuration
 reader. All of these repositories were created from the
-<code class="docutils literal notranslate"><span class="pre">hutch-python</span> <span class="pre">--create</span> <span class="pre">reponame</span></code> template function.</td>
+<code class="docutils literal notranslate"><span class="pre">hutch-python</span> <span class="pre">--create</span> <span class="pre">reponame</span></code> template function.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="hutch-python">
 <h3>hutch-python<a class="headerlink" href="#hutch-python" title="Permalink to this headline">¶</a></h3>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="17%" />
-<col width="83%" />
+<col style="width: 17%" />
+<col style="width: 83%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>Repository</td>
-<td><a class="reference external" href="https://github.com/pcdshub/hutch-python">hutch-python</a></td>
+<tbody>
+<tr class="row-odd"><td><p>Repository</p></td>
+<td><p><a class="reference external" href="https://github.com/pcdshub/hutch-python">hutch-python</a></p></td>
 </tr>
-<tr class="row-even"><td>How we use it</td>
-<td>Scripts like <code class="docutils literal notranslate"><span class="pre">mfxpython</span></code> call on the <code class="docutils literal notranslate"><span class="pre">hutch-python</span></code>
+<tr class="row-even"><td><p>How we use it</p></td>
+<td><p>Scripts like <code class="docutils literal notranslate"><span class="pre">mfxpython</span></code> call on the <code class="docutils literal notranslate"><span class="pre">hutch-python</span></code>
 application with a hutch-specific <code class="docutils literal notranslate"><span class="pre">conf.yaml</span></code> file, as well as
-hutch-specific <code class="docutils literal notranslate"><span class="pre">mfx/beamline.py</span></code> and <code class="docutils literal notranslate"><span class="pre">experiments</span></code> folder.</td>
+hutch-specific <code class="docutils literal notranslate"><span class="pre">mfx/beamline.py</span></code> and <code class="docutils literal notranslate"><span class="pre">experiments</span></code> folder.</p></td>
 </tr>
-<tr class="row-odd"><td>Motivation</td>
-<td>The load process for each hutch is essentially identical. This
+<tr class="row-odd"><td><p>Motivation</p></td>
+<td><p>The load process for each hutch is essentially identical. This
 should be handled in shared code with simple hooks for
 hutch-specific and experiment-specific additions.
 This was chosen instead of supporting <code class="docutils literal notranslate"><span class="pre">IPython</span></code> profiles
 or massive <code class="docutils literal notranslate"><span class="pre">beamline.py</span></code> files because these can get messy and
 hard to manage. This avoids the procedure of going around to
-each deployment to update boilerplate code.</td>
+each deployment to update boilerplate code.</p></td>
 </tr>
-<tr class="row-even"><td>How it works</td>
-<td>A shared startup script is seeded with the contents of the
+<tr class="row-even"><td><p>How it works</p></td>
+<td><p>A shared startup script is seeded with the contents of the
 <code class="docutils literal notranslate"><span class="pre">conf.yml</span></code> file. Shared operations are done the same way and
 then the <code class="docutils literal notranslate"><span class="pre">beamline.py</span></code> and <code class="docutils literal notranslate"><span class="pre">experiments</span></code> user code is
-invoked.</td>
+invoked.</p></td>
 </tr>
-<tr class="row-odd"><td>Dependencies</td>
-<td><p class="first">This is used by the <a class="reference internal" href="#hutch-specific-repositories"><span class="std std-ref">Hutch-specific Repositories</span></a> to</p>
+<tr class="row-odd"><td><p>Dependencies</p></td>
+<td><p>This is used by the <a class="reference internal" href="#hutch-specific-repositories"><span class="std std-ref">Hutch-specific Repositories</span></a> to</p>
 <p>Relies on most of our modules:</p>
-<ul class="last simple">
-<li>Uses <a class="reference internal" href="#happi"><span class="std std-ref">happi</span></a> to load from the beamline device database
-and from the questionnaire experiment devices</li>
-<li>Uses <a class="reference internal" href="#pcdsdevices"><span class="std std-ref">pcdsdevices</span></a> for the device definitions and to set
-up position presets</li>
-<li>Uses <a class="reference internal" href="#pcdsdaq"><span class="std std-ref">pcdsdaq</span></a> to control the data acquisition system</li>
-<li>Uses <a class="reference internal" href="#lightpath"><span class="std std-ref">lightpath</span></a> as a command-line interface for checking
-if anything is blocking the beam path</li>
-<li>Uses <a class="reference internal" href="#elog"><span class="std std-ref">elog</span></a> to post to the experiment logbooks</li>
+<ul class="simple">
+<li><p>Uses <a class="reference internal" href="#happi"><span class="std std-ref">happi</span></a> to load from the beamline device database
+and from the questionnaire experiment devices</p></li>
+<li><p>Uses <a class="reference internal" href="#pcdsdevices"><span class="std std-ref">pcdsdevices</span></a> for the device definitions and to set
+up position presets</p></li>
+<li><p>Uses <a class="reference internal" href="#pcdsdaq"><span class="std std-ref">pcdsdaq</span></a> to control the data acquisition system</p></li>
+<li><p>Uses <a class="reference internal" href="#lightpath"><span class="std std-ref">lightpath</span></a> as a command-line interface for checking
+if anything is blocking the beam path</p></li>
+<li><p>Uses <a class="reference internal" href="#elog"><span class="std std-ref">elog</span></a> to post to the experiment logbooks</p></li>
 </ul>
 </td>
 </tr>
@@ -330,40 +333,40 @@ if anything is blocking the beam path</li>
 </div>
 <div class="section" id="lightpath">
 <h3>lightpath<a class="headerlink" href="#lightpath" title="Permalink to this headline">¶</a></h3>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="17%" />
-<col width="83%" />
+<col style="width: 17%" />
+<col style="width: 83%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>Repository</td>
-<td><a class="reference external" href="https://github.com/pcdshub/lightpath">lightpath</a></td>
+<tbody>
+<tr class="row-odd"><td><p>Repository</p></td>
+<td><p><a class="reference external" href="https://github.com/pcdshub/lightpath">lightpath</a></p></td>
 </tr>
-<tr class="row-even"><td>How we use it</td>
-<td>An environment with <code class="docutils literal notranslate"><span class="pre">lightpath</span></code> installed has a <code class="docutils literal notranslate"><span class="pre">lightpath</span></code>
+<tr class="row-even"><td><p>How we use it</p></td>
+<td><p>An environment with <code class="docutils literal notranslate"><span class="pre">lightpath</span></code> installed has a <code class="docutils literal notranslate"><span class="pre">lightpath</span></code>
 script that will open the GUI. This can be use to visually
 inspect the light path. This doubles as an application and a
 module, providing an importable interface that is used in other
-places, such as <a class="reference internal" href="#hutch-python"><span class="std std-ref">hutch-python</span></a>.</td>
+places, such as <a class="reference internal" href="#hutch-python"><span class="std std-ref">hutch-python</span></a>.</p></td>
 </tr>
-<tr class="row-odd"><td>Motivation</td>
-<td>Help the user find which objects are in the beam, and which are
+<tr class="row-odd"><td><p>Motivation</p></td>
+<td><p>Help the user find which objects are in the beam, and which are
 not. This can be used to clear the beamline and to check if you
 expect beam to be incident on your imager. Unlike older
 software with the same purpose, this is extremely configurable
-and simple to keep up-to-date using <a class="reference internal" href="#happi"><span class="std std-ref">happi</span></a>.</td>
+and simple to keep up-to-date using <a class="reference internal" href="#happi"><span class="std std-ref">happi</span></a>.</p></td>
 </tr>
-<tr class="row-even"><td>How it works</td>
-<td>This uses the z-position and beamline metadate from <a class="reference internal" href="#happi"><span class="std std-ref">happi</span></a>
+<tr class="row-even"><td><p>How it works</p></td>
+<td><p>This uses the z-position and beamline metadata from <a class="reference internal" href="#happi"><span class="std std-ref">happi</span></a>
 to sort devices by position along the beamline. It relies on the
 in/out interface from <a class="reference internal" href="#pcdsdevices"><span class="std std-ref">pcdsdevices</span></a> to determine whether
-each device is in the beam.</td>
+each device is in the beam.</p></td>
 </tr>
-<tr class="row-odd"><td>Dependencies</td>
-<td><ul class="first last simple">
-<li>Uses <a class="reference internal" href="#pydm"><span class="std std-ref">pydm</span></a> for the GUI</li>
-<li>Uses <a class="reference internal" href="#happi"><span class="std std-ref">happi</span></a> for device loading</li>
-<li>Uses modules like <a class="reference internal" href="#pcdsdevices"><span class="std std-ref">pcdsdevices</span></a> to define device classes</li>
+<tr class="row-odd"><td><p>Dependencies</p></td>
+<td><ul class="simple">
+<li><p>Uses <a class="reference internal" href="#pydm"><span class="std std-ref">pydm</span></a> for the GUI</p></li>
+<li><p>Uses <a class="reference internal" href="#happi"><span class="std std-ref">happi</span></a> for device loading</p></li>
+<li><p>Uses modules like <a class="reference internal" href="#pcdsdevices"><span class="std std-ref">pcdsdevices</span></a> to define device classes</p></li>
 </ul>
 </td>
 </tr>
@@ -372,103 +375,103 @@ each device is in the beam.</td>
 </div>
 <div class="section" id="pmgr">
 <h3>pmgr<a class="headerlink" href="#pmgr" title="Permalink to this headline">¶</a></h3>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="17%" />
-<col width="83%" />
+<col style="width: 17%" />
+<col style="width: 83%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>Repository</td>
-<td><a class="reference external" href="https://github.com/pcdshub/pmgr">pmgr</a></td>
+<tbody>
+<tr class="row-odd"><td><p>Repository</p></td>
+<td><p><a class="reference external" href="https://github.com/pcdshub/pmgr">pmgr</a></p></td>
 </tr>
-<tr class="row-even"><td>How we use it</td>
-<td>This is the Parameter Manager, <code class="docutils literal notranslate"><span class="pre">pmgr</span></code> for short. This isn’t
+<tr class="row-even"><td><p>How we use it</p></td>
+<td><p>This is the Parameter Manager, <code class="docutils literal notranslate"><span class="pre">pmgr</span></code> for short. This isn’t
 installed in an environment (yet), but is used as a stand-alone
-GUI for keeping track of device parameters. It is used in the
-old python cli for the same purpose, but this has yet to be
-ported.</td>
+GUI for keeping track of device parameters. It was used in the
+old python CLI for the same purpose, but this has yet to be
+ported.</p></td>
 </tr>
-<tr class="row-odd"><td>Motivation</td>
-<td>We need a place to keep track of and restore parameters to ease
+<tr class="row-odd"><td><p>Motivation</p></td>
+<td><p>We need a place to keep track of and restore parameters to ease
 the deployment and redeployment of motors for changing
-experimental needs.</td>
+experimental needs.</p></td>
 </tr>
-<tr class="row-even"><td>How it works</td>
-<td><code class="docutils literal notranslate"><span class="pre">pmgr</span></code> provides a qt gui with a mysql server backend that
-stores all of the parameters.</td>
+<tr class="row-even"><td><p>How it works</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pmgr</span></code> provides a qt gui with a mysql server backend that
+stores all of the parameters.</p></td>
 </tr>
-<tr class="row-odd"><td>Dependencies</td>
-<td><code class="docutils literal notranslate"><span class="pre">pmgr</span></code> does not depend on our other modules, but it does
+<tr class="row-odd"><td><p>Dependencies</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pmgr</span></code> does not depend on our other modules, but it does
 depend on our patched version of <code class="docutils literal notranslate"><span class="pre">pyqt</span></code> to make the tables
-work.</td>
+work.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="pcds-envs">
 <h3>pcds-envs<a class="headerlink" href="#pcds-envs" title="Permalink to this headline">¶</a></h3>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="17%" />
-<col width="83%" />
+<col style="width: 17%" />
+<col style="width: 83%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>Repository</td>
-<td><a class="reference external" href="https://github.com/pcdshub/pcds-envs">pcds-envs</a></td>
+<tbody>
+<tr class="row-odd"><td><p>Repository</p></td>
+<td><p><a class="reference external" href="https://github.com/pcdshub/pcds-envs">pcds-envs</a></p></td>
 </tr>
-<tr class="row-even"><td>How we use it</td>
-<td>This is used to track our shared environment changes, and to
+<tr class="row-even"><td><p>How we use it</p></td>
+<td><p>This is used to track our shared environment changes, and to
 anticipate and catch integration problems with bringing all of
-our packages together.</td>
+our packages together.</p></td>
 </tr>
-<tr class="row-odd"><td>Motivation</td>
-<td>We need to do this in a structured, semi-automated way to
-minimize upkeep and catch mistakes.</td>
+<tr class="row-odd"><td><p>Motivation</p></td>
+<td><p>We need to do this in a structured, semi-automated way to
+minimize upkeep and catch mistakes.</p></td>
 </tr>
-<tr class="row-even"><td>How it works</td>
-<td><code class="docutils literal notranslate"><span class="pre">packages.txt</span></code> is updated to add new packages.
-<code class="docutils literal notranslate"><span class="pre">stage_release.sh</span></code> is ran to build a new environment from the
-packages list and push it to github. We make a PR and discuss.
-Along with the PR, an automated test is ran to check that all
+<tr class="row-even"><td><p>How it works</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">packages.txt</span></code> is updated to add new packages.
+<code class="docutils literal notranslate"><span class="pre">stage_release.sh</span></code> is run to build a new environment from the
+packages list and push it to Github. We make a PR and discuss.
+Along with the PR, an automated test is run to check that all
 of our pcdshub modules pass their individual automated tests
 with the full environment (this also runs daily).
 If we like the new environment, we merge the PR and make a tag.
 We use <code class="docutils literal notranslate"><span class="pre">apply_release.sh</span></code> to put the new tag into the shared
-environment.</td>
+environment.</p></td>
 </tr>
-<tr class="row-odd"><td>Dependencies</td>
-<td>This only depends on <code class="docutils literal notranslate"><span class="pre">Python</span></code> and <code class="docutils literal notranslate"><span class="pre">Conda</span></code></td>
+<tr class="row-odd"><td><p>Dependencies</p></td>
+<td><p>This only depends on <code class="docutils literal notranslate"><span class="pre">Python</span></code> and <code class="docutils literal notranslate"><span class="pre">Conda</span></code></p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="pcds-recipes">
 <h3>pcds-recipes<a class="headerlink" href="#pcds-recipes" title="Permalink to this headline">¶</a></h3>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="17%" />
-<col width="83%" />
+<col style="width: 17%" />
+<col style="width: 83%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>Repository</td>
-<td><a class="reference external" href="https://github.com/pcdshub/pcds-recipes">pcds-recipes</a></td>
+<tbody>
+<tr class="row-odd"><td><p>Repository</p></td>
+<td><p><a class="reference external" href="https://github.com/pcdshub/pcds-recipes">pcds-recipes</a></p></td>
 </tr>
-<tr class="row-even"><td>How we use it</td>
-<td>This is used to build non-pcdshub conda packages and make sure
-they get into the pcds-tag channel.</td>
+<tr class="row-even"><td><p>How we use it</p></td>
+<td><p>This is used to build non-pcdshub Conda packages and make sure
+they get into the pcds-tag channel.</p></td>
 </tr>
-<tr class="row-odd"><td>Motivation</td>
-<td>It is unsustanable and unstable to rely on special channels for
+<tr class="row-odd"><td><p>Motivation</p></td>
+<td><p>It is unsustainable and unstable to rely on special channels for
 our conda environments. By limiting to the <code class="docutils literal notranslate"><span class="pre">defaults</span></code>,
-<code class="docutils literal notranslate"><span class="pre">conda-forge</span></code>, and our own <code class="docutils literal notranslate"><span class="pre">pcds-tag</span></code> it becomes easy to
-specify our environment setups.</td>
+<code class="docutils literal notranslate"><span class="pre">conda-forge</span></code>, and our own <code class="docutils literal notranslate"><span class="pre">pcds-tag</span></code>, it becomes easy to
+specify our environment setups.</p></td>
 </tr>
-<tr class="row-even"><td>How it works</td>
-<td>Recipes are placed into the repository and <code class="docutils literal notranslate"><span class="pre">build.py</span></code> builds
-and uploads them.</td>
+<tr class="row-even"><td><p>How it works</p></td>
+<td><p>Recipes are placed into the repository and <code class="docutils literal notranslate"><span class="pre">build.py</span></code> builds
+and uploads them.</p></td>
 </tr>
-<tr class="row-odd"><td>Dependencies</td>
-<td>This only depends on <code class="docutils literal notranslate"><span class="pre">Python</span></code> and <code class="docutils literal notranslate"><span class="pre">Conda</span></code></td>
+<tr class="row-odd"><td><p>Dependencies</p></td>
+<td><p>This only depends on <code class="docutils literal notranslate"><span class="pre">Python</span></code> and <code class="docutils literal notranslate"><span class="pre">Conda</span></code></p></td>
 </tr>
 </tbody>
 </table>
@@ -480,65 +483,65 @@ and uploads them.</td>
 behind them, as well as their dependencies.
 This includes only repositories that are hosted on pcdshub with a
 corresponding online documentation page.</p>
-<div class="section" id="typhon">
-<h3>typhon<a class="headerlink" href="#typhon" title="Permalink to this headline">¶</a></h3>
-<table border="1" class="docutils">
+<div class="section" id="typhos">
+<h3>typhos<a class="headerlink" href="#typhos" title="Permalink to this headline">¶</a></h3>
+<table class="docutils align-default">
 <colgroup>
-<col width="17%" />
-<col width="83%" />
+<col style="width: 17%" />
+<col style="width: 83%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>Repository</td>
-<td><a class="reference external" href="https://github.com/pcdshub/typhon">typhon</a></td>
+<tbody>
+<tr class="row-odd"><td><p>Repository</p></td>
+<td><p><a class="reference external" href="https://github.com/pcdshub/typhos">typhos</a></p></td>
 </tr>
-<tr class="row-even"><td>How we use it</td>
-<td>Automatically generate screens from ophyd devices.</td>
+<tr class="row-even"><td><p>How we use it</p></td>
+<td><p>To automatically generate screens from <a class="reference internal" href="#ophyd"><span class="std std-ref">ophyd</span></a> devices.</p></td>
 </tr>
-<tr class="row-odd"><td>Motivation</td>
-<td>We need new <a class="reference internal" href="#pydm"><span class="std std-ref">pydm</span></a> screens and these are great starting
+<tr class="row-odd"><td><p>Motivation</p></td>
+<td><p>We need new <a class="reference internal" href="#pydm"><span class="std std-ref">pydm</span></a> screens and these are great starting
 points. The <a class="reference internal" href="#ophyd"><span class="std std-ref">ophyd</span></a> device structure is very useful for
-organizing device properties into logical groups.</td>
+organizing device properties into logical groups.</p></td>
 </tr>
-<tr class="row-even"><td>How it works</td>
-<td>Groups device components by kind (e.g. hinted, normal,
+<tr class="row-even"><td><p>How it works</p></td>
+<td><p>Groups device components by kind (e.g. hinted, normal,
 configuration) and sort into tabs, etc. accordingly. Provides
-tools on every generated screen.</td>
+tools on every generated screen.</p></td>
 </tr>
-<tr class="row-odd"><td>Dependencies</td>
-<td><a class="reference internal" href="#pydm"><span class="std std-ref">pydm</span></a> and <a class="reference internal" href="#ophyd"><span class="std std-ref">ophyd</span></a></td>
+<tr class="row-odd"><td><p>Dependencies</p></td>
+<td><p><a class="reference internal" href="#pydm"><span class="std std-ref">pydm</span></a> and <a class="reference internal" href="#ophyd"><span class="std std-ref">ophyd</span></a></p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="pcdsdevices">
 <h3>pcdsdevices<a class="headerlink" href="#pcdsdevices" title="Permalink to this headline">¶</a></h3>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="17%" />
-<col width="83%" />
+<col style="width: 17%" />
+<col style="width: 83%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>Repository</td>
-<td><a class="reference external" href="https://github.com/pcdshub/pcdsdevices">pcdsdevices</a></td>
+<tbody>
+<tr class="row-odd"><td><p>Repository</p></td>
+<td><p><a class="reference external" href="https://github.com/pcdshub/pcdsdevices">pcdsdevices</a></p></td>
 </tr>
-<tr class="row-even"><td>How we use it</td>
-<td>To define <a class="reference internal" href="#ophyd"><span class="std std-ref">ophyd</span></a> device classes that correspond to lcls
-pcds EPICS IOCs. This is also where we put additional logic and
-cli niceties for interactive sessions with these devices.</td>
+<tr class="row-even"><td><p>How we use it</p></td>
+<td><p>To define <a class="reference internal" href="#ophyd"><span class="std std-ref">ophyd</span></a> device classes that correspond to LCLS
+PCDS EPICS IOCs. This is also where we put additional logic and
+CLI niceties for interactive sessions with these devices.</p></td>
 </tr>
-<tr class="row-odd"><td>Motivation</td>
-<td>There must be a common place where these classes are defined
+<tr class="row-odd"><td><p>Motivation</p></td>
+<td><p>There must be a common place where these classes are defined
 so that all of our <code class="docutils literal notranslate"><span class="pre">Python</span></code> applications share PV structures
-and logic for each identical device class or instance.</td>
+and logic for each identical device class or instance.</p></td>
 </tr>
-<tr class="row-even"><td>How it works</td>
-<td>Follow the <a class="reference internal" href="#ophyd"><span class="std std-ref">ophyd</span></a> rules to record which PVs are associated
-with each device class.</td>
+<tr class="row-even"><td><p>How it works</p></td>
+<td><p>Follows the <a class="reference internal" href="#ophyd"><span class="std std-ref">ophyd</span></a> rules to record which PVs are associated
+with each device class.</p></td>
 </tr>
-<tr class="row-odd"><td>Dependencies</td>
-<td><ul class="first last simple">
-<li><a class="reference internal" href="#ophyd"><span class="std std-ref">ophyd</span></a></li>
-<li><code class="docutils literal notranslate"><span class="pre">pyepics</span></code>, currently as the EPICS communication layer</li>
+<tr class="row-odd"><td><p>Dependencies</p></td>
+<td><ul class="simple">
+<li><p><a class="reference internal" href="#ophyd"><span class="std std-ref">ophyd</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pyepics</span></code>, currently as the EPICS communication layer</p></li>
 </ul>
 </td>
 </tr>
@@ -547,204 +550,204 @@ with each device class.</td>
 </div>
 <div class="section" id="transfocate">
 <h3>transfocate<a class="headerlink" href="#transfocate" title="Permalink to this headline">¶</a></h3>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="17%" />
-<col width="83%" />
+<col style="width: 17%" />
+<col style="width: 83%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>Repository</td>
-<td><a class="reference external" href="https://github.com/pcdshub/transfocate">transfocate</a></td>
+<tbody>
+<tr class="row-odd"><td><p>Repository</p></td>
+<td><p><a class="reference external" href="https://github.com/pcdshub/transfocate">transfocate</a></p></td>
 </tr>
-<tr class="row-even"><td>How we use it</td>
-<td>To define an <a class="reference internal" href="#ophyd"><span class="std std-ref">ophyd</span></a> device class for the MFX transfocator.</td>
+<tr class="row-even"><td><p>How we use it</p></td>
+<td><p>To define an <a class="reference internal" href="#ophyd"><span class="std std-ref">ophyd</span></a> device class for the MFX transfocator.</p></td>
 </tr>
-<tr class="row-odd"><td>Motivation</td>
-<td>This is more complicated than a standard device and was being
-developed parallel to the <a class="reference internal" href="#pcdsdevices"><span class="std std-ref">pcdsdevices</span></a> repository.</td>
+<tr class="row-odd"><td><p>Motivation</p></td>
+<td><p>This is more complicated than a standard device and was being
+developed parallel to the <a class="reference internal" href="#pcdsdevices"><span class="std std-ref">pcdsdevices</span></a> repository.</p></td>
 </tr>
-<tr class="row-even"><td>How it works</td>
-<td>Defines the transfocator’s PVs and some helper methods for
-putting lens combinations in and out.</td>
+<tr class="row-even"><td><p>How it works</p></td>
+<td><p>Defines the transfocator’s PVs and some helper methods for
+putting lens combinations in and out.</p></td>
 </tr>
-<tr class="row-odd"><td>Dependencies</td>
-<td><a class="reference internal" href="#pcdsdevices"><span class="std std-ref">pcdsdevices</span></a></td>
+<tr class="row-odd"><td><p>Dependencies</p></td>
+<td><p><a class="reference internal" href="#pcdsdevices"><span class="std std-ref">pcdsdevices</span></a></p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="hxrsnd">
 <h3>hxrsnd<a class="headerlink" href="#hxrsnd" title="Permalink to this headline">¶</a></h3>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="17%" />
-<col width="83%" />
+<col style="width: 17%" />
+<col style="width: 83%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>Repository</td>
-<td><a class="reference external" href="https://github.com/pcdshub/hxrsnd">hxrsnd</a></td>
+<tbody>
+<tr class="row-odd"><td><p>Repository</p></td>
+<td><p><a class="reference external" href="https://github.com/pcdshub/hxrsnd">hxrsnd</a></p></td>
 </tr>
-<tr class="row-even"><td>How we use it</td>
-<td>To define <a class="reference internal" href="#ophyd"><span class="std std-ref">ophyd</span></a> device classes and <a class="reference internal" href="#bluesky"><span class="std std-ref">bluesky</span></a>
-scanning routines for the XCS split and delay.</td>
+<tr class="row-even"><td><p>How we use it</p></td>
+<td><p>To define <a class="reference internal" href="#ophyd"><span class="std std-ref">ophyd</span></a> device classes and <a class="reference internal" href="#bluesky"><span class="std std-ref">bluesky</span></a>
+scanning routines for the XCS split and delay.</p></td>
 </tr>
-<tr class="row-odd"><td>Motivation</td>
-<td>This is more complicated than a standard device and was being
-developed parallel to the <a class="reference internal" href="#pcdsdevices"><span class="std std-ref">pcdsdevices</span></a> repository.</td>
+<tr class="row-odd"><td><p>Motivation</p></td>
+<td><p>This is more complicated than a standard device and was being
+developed parallel to the <a class="reference internal" href="#pcdsdevices"><span class="std std-ref">pcdsdevices</span></a> repository.</p></td>
 </tr>
-<tr class="row-even"><td>How it works</td>
-<td>Defines the SND’s PVs and some helper methods for running
-calibration scans and collecting data.</td>
+<tr class="row-even"><td><p>How it works</p></td>
+<td><p>Defines the SND’s PVs and some helper methods for running
+calibration scans and collecting data.</p></td>
 </tr>
-<tr class="row-odd"><td>Dependencies</td>
-<td><a class="reference internal" href="#pcdsdevices"><span class="std std-ref">pcdsdevices</span></a>, <code class="docutils literal notranslate"><span class="pre">pswalker</span></code></td>
+<tr class="row-odd"><td><p>Dependencies</p></td>
+<td><p><a class="reference internal" href="#pcdsdevices"><span class="std std-ref">pcdsdevices</span></a>, <code class="docutils literal notranslate"><span class="pre">pswalker</span></code></p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="nabs">
 <h3>nabs<a class="headerlink" href="#nabs" title="Permalink to this headline">¶</a></h3>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="17%" />
-<col width="83%" />
+<col style="width: 17%" />
+<col style="width: 83%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>Repository</td>
-<td><a class="reference external" href="https://github.com/pcdshub/nabs">nabs</a></td>
+<tbody>
+<tr class="row-odd"><td><p>Repository</p></td>
+<td><p><a class="reference external" href="https://github.com/pcdshub/nabs">nabs</a></p></td>
 </tr>
-<tr class="row-even"><td>How we use it</td>
-<td>To define lcls-specific <a class="reference internal" href="#bluesky"><span class="std std-ref">bluesky</span></a> utilities and to build
-out the <a class="reference internal" href="#bluesky"><span class="std std-ref">bluesky</span></a> automation framework.</td>
+<tr class="row-even"><td><p>How we use it</p></td>
+<td><p>To define lcls-specific <a class="reference internal" href="#bluesky"><span class="std std-ref">bluesky</span></a> utilities and to build
+out the <a class="reference internal" href="#bluesky"><span class="std std-ref">bluesky</span></a> automation framework.</p></td>
 </tr>
-<tr class="row-odd"><td>Motivation</td>
-<td>We want a cleaner version of the legacy <code class="docutils literal notranslate"><span class="pre">pswalker</span></code> module
+<tr class="row-odd"><td><p>Motivation</p></td>
+<td><p>We want a cleaner version of the legacy <code class="docutils literal notranslate"><span class="pre">pswalker</span></code> module
 to have shared code between different applications that need
 to do similar things e.g. filter on beam drops, maximize
-signals, etc.</td>
+signals, etc.</p></td>
 </tr>
-<tr class="row-even"><td>How it works</td>
-<td>Defines an API for various plans, preprocessors, etc.</td>
+<tr class="row-even"><td><p>How it works</p></td>
+<td><p>Defines an API for various plans, preprocessors, etc.</p></td>
 </tr>
-<tr class="row-odd"><td>Dependencies</td>
-<td><a class="reference internal" href="#bluesky"><span class="std std-ref">bluesky</span></a></td>
+<tr class="row-odd"><td><p>Dependencies</p></td>
+<td><p><a class="reference internal" href="#bluesky"><span class="std std-ref">bluesky</span></a></p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="pcdsdaq">
 <h3>pcdsdaq<a class="headerlink" href="#pcdsdaq" title="Permalink to this headline">¶</a></h3>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="17%" />
-<col width="83%" />
+<col style="width: 17%" />
+<col style="width: 83%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>Repository</td>
-<td><a class="reference external" href="https://github.com/pcdshub/pcdsdaq">pcdsdaq</a></td>
+<tbody>
+<tr class="row-odd"><td><p>Repository</p></td>
+<td><p><a class="reference external" href="https://github.com/pcdshub/pcdsdaq">pcdsdaq</a></p></td>
 </tr>
-<tr class="row-even"><td>How we use it</td>
-<td>To define a <a class="reference internal" href="#bluesky"><span class="std std-ref">bluesky</span></a>-compatible control layer for the
-LCLS1 data aquisition system (DAQ)</td>
+<tr class="row-even"><td><p>How we use it</p></td>
+<td><p>To define a <a class="reference internal" href="#bluesky"><span class="std std-ref">bluesky</span></a>-compatible control layer for the
+LCLS1 data acquisition system (DAQ).</p></td>
 </tr>
-<tr class="row-odd"><td>Motivation</td>
-<td>We need to be able to control the DAQ. Doing it in a
+<tr class="row-odd"><td><p>Motivation</p></td>
+<td><p>We need to be able to control the DAQ. Doing it in a
 <a class="reference internal" href="#bluesky"><span class="std std-ref">bluesky</span></a>-compatible way means we can include the DAQ in
-any <a class="reference internal" href="#bluesky"><span class="std std-ref">bluesky</span></a> plan.</td>
+any <a class="reference internal" href="#bluesky"><span class="std std-ref">bluesky</span></a> plan.</p></td>
 </tr>
-<tr class="row-even"><td>How it works</td>
-<td>Wraps the <code class="docutils literal notranslate"><span class="pre">pydaq.Control</span></code> object and adheres closely to the
+<tr class="row-even"><td><p>How it works</p></td>
+<td><p>Wraps the <code class="docutils literal notranslate"><span class="pre">pydaq.Control</span></code> object and adheres closely to the
 <a class="reference internal" href="#bluesky"><span class="std std-ref">bluesky</span></a> interface. You can configure the daq, do runs,
-and include it as a readable device in scans.</td>
+and include it as a readable device in scans.</p></td>
 </tr>
-<tr class="row-odd"><td>Dependencies</td>
-<td><a class="reference internal" href="#bluesky"><span class="std std-ref">bluesky</span></a>, <a class="reference internal" href="#ophyd"><span class="std std-ref">ophyd</span></a>, <code class="docutils literal notranslate"><span class="pre">pydaq</span></code></td>
+<tr class="row-odd"><td><p>Dependencies</p></td>
+<td><p><a class="reference internal" href="#bluesky"><span class="std std-ref">bluesky</span></a>, <a class="reference internal" href="#ophyd"><span class="std std-ref">ophyd</span></a>, <code class="docutils literal notranslate"><span class="pre">pydaq</span></code></p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="happi">
 <h3>happi<a class="headerlink" href="#happi" title="Permalink to this headline">¶</a></h3>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="17%" />
-<col width="83%" />
+<col style="width: 17%" />
+<col style="width: 83%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>Repository</td>
-<td><a class="reference external" href="https://github.com/pcdshub/happi">happi</a></td>
+<tbody>
+<tr class="row-odd"><td><p>Repository</p></td>
+<td><p><a class="reference external" href="https://github.com/pcdshub/happi">happi</a></p></td>
 </tr>
-<tr class="row-even"><td>How we use it</td>
-<td>To store all of our device metadata in <a class="reference internal" href="#device-config"><span class="std std-ref">device_config</span></a> and
+<tr class="row-even"><td><p>How we use it</p></td>
+<td><p>To store all of our device metadata in <a class="reference internal" href="#device-config"><span class="std std-ref">device_config</span></a> and
 reload these devices to create identical objects in every
-application.</td>
+application.</p></td>
 </tr>
-<tr class="row-odd"><td>Motivation</td>
-<td>There must be a canonical way to load devices, consistent
-accross all of our python applications.</td>
+<tr class="row-odd"><td><p>Motivation</p></td>
+<td><p>There must be a canonical way to load devices, consistent
+across all of our python applications.</p></td>
 </tr>
-<tr class="row-even"><td>How it works</td>
-<td>Defines container objects that represent real objects. These can
-be stored in json or mongodb and be used to generate real
-objects.</td>
+<tr class="row-even"><td><p>How it works</p></td>
+<td><p>Defines container objects that represent real objects. These can
+be stored in <code class="docutils literal notranslate"><span class="pre">json</span></code> or <code class="docutils literal notranslate"><span class="pre">mongodb</span></code> and be used to generate real
+objects.</p></td>
 </tr>
-<tr class="row-odd"><td>Dependencies</td>
-<td>No pcdshub dependencies</td>
+<tr class="row-odd"><td><p>Dependencies</p></td>
+<td><p>No pcdshub dependencies</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="device-config">
 <h3>device_config<a class="headerlink" href="#device-config" title="Permalink to this headline">¶</a></h3>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="17%" />
-<col width="83%" />
+<col style="width: 17%" />
+<col style="width: 83%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>Repository</td>
-<td><a class="reference external" href="https://github.com/pcdshub/device_config">device_config</a></td>
+<tbody>
+<tr class="row-odd"><td><p>Repository</p></td>
+<td><p><a class="reference external" href="https://github.com/pcdshub/device_config">device_config</a></p></td>
 </tr>
-<tr class="row-even"><td>How we use it</td>
-<td>As a central file store of all the <a class="reference internal" href="#happi"><span class="std std-ref">happi</span></a> device
-configuration information.</td>
+<tr class="row-even"><td><p>How we use it</p></td>
+<td><p>As a central file store of all the <a class="reference internal" href="#happi"><span class="std std-ref">happi</span></a> device
+configuration information.</p></td>
 </tr>
-<tr class="row-odd"><td>Motivation</td>
-<td>We need to store the information somewhere until we have a
-mongodb set up.</td>
+<tr class="row-odd"><td><p>Motivation</p></td>
+<td><p>We need to store the information somewhere until we have a
+<code class="docutils literal notranslate"><span class="pre">mongodb</span></code> set up.</p></td>
 </tr>
-<tr class="row-even"><td>How it works</td>
-<td>Stores a single json file.</td>
+<tr class="row-even"><td><p>How it works</p></td>
+<td><p>Stores a single <code class="docutils literal notranslate"><span class="pre">json</span></code> file.</p></td>
 </tr>
-<tr class="row-odd"><td>Dependencies</td>
-<td>No pcdshub dependencies</td>
+<tr class="row-odd"><td><p>Dependencies</p></td>
+<td><p>No pcdshub dependencies</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="elog">
 <h3>elog<a class="headerlink" href="#elog" title="Permalink to this headline">¶</a></h3>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="17%" />
-<col width="83%" />
+<col style="width: 17%" />
+<col style="width: 83%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>Repository</td>
-<td><a class="reference external" href="https://github.com/pcdshub/elog">elog</a></td>
+<tbody>
+<tr class="row-odd"><td><p>Repository</p></td>
+<td><p><a class="reference external" href="https://github.com/pcdshub/elog">elog</a></p></td>
 </tr>
-<tr class="row-even"><td>How we use it</td>
-<td>To post information to the experiment elog.</td>
+<tr class="row-even"><td><p>How we use it</p></td>
+<td><p>To post information to the experiment elog.</p></td>
 </tr>
-<tr class="row-odd"><td>Motivation</td>
-<td>We need python bindings for this so that we can update the elog
-programattically or through the command line.</td>
+<tr class="row-odd"><td><p>Motivation</p></td>
+<td><p>We need python bindings for this so that we can update the elog
+programmatically or from the command line.</p></td>
 </tr>
-<tr class="row-even"><td>How it works</td>
-<td>https requests</td>
+<tr class="row-even"><td><p>How it works</p></td>
+<td><p>Through https requests</p></td>
 </tr>
-<tr class="row-odd"><td>Dependencies</td>
-<td>No pcdshub dependencies</td>
+<tr class="row-odd"><td><p>Dependencies</p></td>
+<td><p>No pcdshub dependencies</p></td>
 </tr>
 </tbody>
 </table>
@@ -753,95 +756,95 @@ programattically or through the command line.</td>
 <div class="section" id="external-modules">
 <h2>External Modules<a class="headerlink" href="#external-modules" title="Permalink to this headline">¶</a></h2>
 <p>This section will list some of the more site-specific external modules we use
-and explain the motivations behind the modules and behind why we use them.</p>
+and explain the motivations behind the modules and why we use them.</p>
 <div class="section" id="bluesky">
 <h3>bluesky<a class="headerlink" href="#bluesky" title="Permalink to this headline">¶</a></h3>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="17%" />
-<col width="83%" />
+<col style="width: 17%" />
+<col style="width: 83%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>Repository</td>
-<td><a class="reference external" href="https://github.com/nsls-ii/bluesky">bluesky</a></td>
+<tbody>
+<tr class="row-odd"><td><p>Repository</p></td>
+<td><p><a class="reference external" href="https://github.com/nsls-ii/bluesky">bluesky</a></p></td>
 </tr>
-<tr class="row-even"><td>How we use it</td>
-<td>As the scanning, process flow, and automation platform.</td>
+<tr class="row-even"><td><p>How we use it</p></td>
+<td><p>As the scanning, process flow, and automation platform.</p></td>
 </tr>
-<tr class="row-odd"><td>Motivation</td>
-<td>If we do scanning in a structured way, we can write cleaner code
+<tr class="row-odd"><td><p>Motivation</p></td>
+<td><p>If we do scanning in a structured way, we can write cleaner code
 that can continue to be maintained, and we can take advantage
 of anything that the <code class="docutils literal notranslate"><span class="pre">bluesky</span></code> community has written as far
-as visualizing data and controlling process flow.</td>
+as visualizing data and controlling process flow.</p></td>
 </tr>
-<tr class="row-even"><td>How it works</td>
-<td>A central <code class="docutils literal notranslate"><span class="pre">RunEngine</span></code> object processes user-created
+<tr class="row-even"><td><p>How it works</p></td>
+<td><p>A central <code class="docutils literal notranslate"><span class="pre">RunEngine</span></code> object processes user-created
 generators called <code class="docutils literal notranslate"><span class="pre">plans</span></code>. These can do things like move
 motors, read values, etc., but they can also be inspected to
 see what the plan would do if we ran it, and they can be given
-arbitrary adaptive logic since this is <code class="docutils literal notranslate"><span class="pre">Python</span></code>.</td>
+arbitrary adaptive logic since this is <code class="docutils literal notranslate"><span class="pre">Python</span></code>.</p></td>
 </tr>
-<tr class="row-odd"><td>Dependencies</td>
-<td>No pcdshub dependencies</td>
+<tr class="row-odd"><td><p>Dependencies</p></td>
+<td><p>No pcdshub dependencies</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="ophyd">
 <h3>ophyd<a class="headerlink" href="#ophyd" title="Permalink to this headline">¶</a></h3>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="17%" />
-<col width="83%" />
+<col style="width: 17%" />
+<col style="width: 83%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>Repository</td>
-<td><a class="reference external" href="https://github.com/nsls-ii/ophyd">ophyd</a></td>
+<tbody>
+<tr class="row-odd"><td><p>Repository</p></td>
+<td><p><a class="reference external" href="https://github.com/nsls-ii/ophyd">ophyd</a></p></td>
 </tr>
-<tr class="row-even"><td>How we use it</td>
-<td>As the device control abstraction layer.</td>
+<tr class="row-even"><td><p>How we use it</p></td>
+<td><p>As the device control abstraction layer.</p></td>
 </tr>
-<tr class="row-odd"><td>Motivation</td>
-<td>We need to have a sane convention for defining devices, and a
-consistent way to define motion interfaces, callbacks, etc.</td>
+<tr class="row-odd"><td><p>Motivation</p></td>
+<td><p>We need to have a sane convention for defining devices, and a
+consistent way to define motion interfaces, callbacks, etc.</p></td>
 </tr>
-<tr class="row-even"><td>How it works</td>
-<td><code class="docutils literal notranslate"><span class="pre">Device</span></code> subclasses register <code class="docutils literal notranslate"><span class="pre">Component</span></code> attributes so that
-every instance knows which PVs to connect to.</td>
+<tr class="row-even"><td><p>How it works</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Device</span></code> subclasses register <code class="docutils literal notranslate"><span class="pre">Component</span></code> attributes so that
+every instance knows which PVs to connect to.</p></td>
 </tr>
-<tr class="row-odd"><td>Dependencies</td>
-<td>No pcdshub dependencies</td>
+<tr class="row-odd"><td><p>Dependencies</p></td>
+<td><p>No pcdshub dependencies</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="pydm">
 <h3>pydm<a class="headerlink" href="#pydm" title="Permalink to this headline">¶</a></h3>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="17%" />
-<col width="83%" />
+<col style="width: 17%" />
+<col style="width: 83%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>Repository</td>
-<td><a class="reference external" href="https://github.com/slaclab/pydm">pydm</a></td>
+<tbody>
+<tr class="row-odd"><td><p>Repository</p></td>
+<td><p><a class="reference external" href="https://github.com/slaclab/pydm">pydm</a></p></td>
 </tr>
-<tr class="row-even"><td>How we use it</td>
-<td><code class="docutils literal notranslate"><span class="pre">pyqt</span></code>-based EPICS control screens.</td>
+<tr class="row-even"><td><p>How we use it</p></td>
+<td><p>To create/display <code class="docutils literal notranslate"><span class="pre">pyqt</span></code>-based EPICS control screens.</p></td>
 </tr>
-<tr class="row-odd"><td>Motivation</td>
-<td>We need to be able to include <code class="docutils literal notranslate"><span class="pre">Python</span></code> logic in our screens
+<tr class="row-odd"><td><p>Motivation</p></td>
+<td><p>We need to be able to include <code class="docutils literal notranslate"><span class="pre">Python</span></code> logic in our screens
 for advanced applications, but we also need a way for new users
-to create screens quickly using a drag-and-drop interface.</td>
+to create screens quickly using a drag-and-drop interface.</p></td>
 </tr>
-<tr class="row-even"><td>How it works</td>
-<td>This leverages qt <code class="docutils literal notranslate"><span class="pre">designer</span></code> as a drag-and-drop interface. A
+<tr class="row-even"><td><p>How it works</p></td>
+<td><p>This leverages qt <code class="docutils literal notranslate"><span class="pre">designer</span></code> as a drag-and-drop interface. A
 rich <code class="docutils literal notranslate"><span class="pre">Python</span></code> API is provided for interacting with EPICS PVs
-and with archiver data, among other things. Widgets are provided
-that correspond to the legacy EDM widgets.</td>
+and archiver data, among other things. Widgets are provided
+that correspond to the legacy EDM widgets.</p></td>
 </tr>
-<tr class="row-odd"><td>Dependencies</td>
-<td>No pcdshub dependencies</td>
+<tr class="row-odd"><td><p>Dependencies</p></td>
+<td><p>No pcdshub dependencies</p></td>
 </tr>
 </tbody>
 </table>
@@ -860,7 +863,7 @@ that correspond to the legacy EDM widgets.</td>
         <a href="installation.html" class="btn btn-neutral float-right" title="Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral" title="PCDS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="PCDS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -869,7 +872,7 @@ that correspond to the legacy EDM widgets.</td>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, SLAC National Accelarator Laboratory.
+        &copy; Copyright 2020, SLAC National Accelarator Laboratory
 
     </p>
   </div>
@@ -886,32 +889,16 @@ that correspond to the legacy EDM widgets.</td>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  <script type="text/javascript" src="_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

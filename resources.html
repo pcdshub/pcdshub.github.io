@@ -17,34 +17,37 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Example Module" href="example_module.html" />
     <link rel="prev" title="Common Questions and Issues" href="faq.html" /> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -83,8 +86,10 @@
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="development.html">Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="style.html">PCDS Python Style Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="faq.html">Common Questions and Issues</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Recommended Resources</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="example_module.html">Example Module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#packages-we-recommend">Packages We Recommend</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#external-tutorials-and-guides">External Tutorials and Guides</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#internal-access">Internal Access</a></li>
@@ -161,32 +166,37 @@
             
   <div class="section" id="recommended-resources">
 <h1>Recommended Resources<a class="headerlink" href="#recommended-resources" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="example_module.html">Example Module</a></li>
+</ul>
+</div>
 <div class="section" id="packages-we-recommend">
 <h2>Packages We Recommend<a class="headerlink" href="#packages-we-recommend" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><a class="reference external" href="https://docs.pytest.org/en/latest">Pytest</a> – Python Testing Framework</li>
-<li><a class="reference external" href="http://flake8.pycqa.org/en/latest">Flake8</a> – Style Enforcement</li>
-<li><a class="reference external" href="http://www.sphinx-doc.org/en/stable">Sphinx</a> – Automated HTML Documentation</li>
-<li><a class="reference external" href="http://nsls-ii.github.io/ophyd">Ophyd</a> – EPICS Device Abstractions</li>
-<li><a class="reference external" href="http://nsls-ii.github.io/bluesky">Bluesky</a> – Generalized Experimental Plans</li>
+<li><p><a class="reference external" href="https://docs.pytest.org/en/latest">Pytest</a> – Python Testing Framework</p></li>
+<li><p><a class="reference external" href="http://flake8.pycqa.org/en/latest">Flake8</a> – Style Enforcement</p></li>
+<li><p><a class="reference external" href="http://www.sphinx-doc.org/en/stable">Sphinx</a> – Automated HTML Documentation</p></li>
+<li><p><a class="reference external" href="http://nsls-ii.github.io/ophyd">Ophyd</a> – EPICS Device Abstractions</p></li>
+<li><p><a class="reference external" href="http://nsls-ii.github.io/bluesky">Bluesky</a> – Generalized Experimental Plans</p></li>
 </ul>
 </div>
 <div class="section" id="external-tutorials-and-guides">
 <h2>External Tutorials and Guides<a class="headerlink" href="#external-tutorials-and-guides" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><a class="reference external" href="http://swcarpentry.github.io/git-novice">Git Tutorial</a> – Thorough Git beginner guide</li>
-<li><a class="reference external" href="https://docs.scipy.org/doc/numpy/dev/gitwash/development_workflow.html">Numpy Development Guide</a> – A development guide from the folks at NumPy</li>
-<li><a class="reference external" href="https://www.python.org/dev/peps/pep-0008">PEP8</a> – Python Coding Conventions</li>
-<li><a class="reference external" href="https://github.com/k88hudson/git-flight-rules">Git Flight Rules</a> – Specific instructions for performing advanced tasks in Git</li>
-<li><a class="reference external" href="https://github.com/numpy/numpy/blob/master/doc/HOWTO_DOCUMENT.rst.txt">NumPy Documentation Guide</a> – Guide to making NumPy style documentation</li>
-<li><a class="reference external" href="https://conda.io/docs/user-guide/getting-started.html">Conda</a> – Getting started guide for using Conda</li>
+<li><p><a class="reference external" href="http://swcarpentry.github.io/git-novice">Git Tutorial</a> – Thorough Git beginner guide</p></li>
+<li><p><a class="reference external" href="https://numpy.org/doc/stable/dev/index.html#development-process-summary">Numpy Development Guide</a> – A development guide from the folks at NumPy</p></li>
+<li><p><a class="reference external" href="https://www.python.org/dev/peps/pep-0008">PEP-8</a> – Python Coding Conventions</p></li>
+<li><p><a class="reference external" href="https://github.com/k88hudson/git-flight-rules">Git Flight Rules</a> – Specific instructions for performing advanced tasks in Git</p></li>
+<li><p><a class="reference external" href="https://numpydoc.readthedocs.io/en/latest/format.html">Numpydoc Docstring Guide</a> – Guide to making NumPy style documentation</p></li>
+<li><p><a class="reference external" href="https://conda.io/docs/user-guide/getting-started.html">Conda</a> – Getting started guide for using Conda</p></li>
 </ul>
 </div>
 <div class="section" id="internal-access">
 <h2>Internal Access<a class="headerlink" href="#internal-access" title="Permalink to this headline">¶</a></h2>
-<p>If you would like to access this site from the internal SLAC intranet you need
-to a link to the proxy server in your Firefox profile. Under Settings -&gt;
-Preferences -&gt; Advanced -&gt; Network -&gt; Connection, enter the Proxy information
+<p>If you would like to access this site from the internal SLAC intranet, you need
+to link to the proxy server in your Firefox profile. Under Settings -&gt;
+Preferences -&gt; Advanced -&gt; Network -&gt; Connection, enter the proxy information
 like so:</p>
 <img alt="_images/proxy.png" src="_images/proxy.png" />
 </div>
@@ -200,8 +210,10 @@ like so:</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="example_module.html" class="btn btn-neutral float-right" title="Example Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-        <a href="faq.html" class="btn btn-neutral" title="Common Questions and Issues" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+        <a href="faq.html" class="btn btn-neutral float-left" title="Common Questions and Issues" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -210,7 +222,7 @@ like so:</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, SLAC National Accelarator Laboratory.
+        &copy; Copyright 2020, SLAC National Accelarator Laboratory
 
     </p>
   </div>
@@ -227,32 +239,16 @@ like so:</p>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  <script type="text/javascript" src="_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>
