@@ -5,15 +5,15 @@ It is recommended that PCDS Python projects are updated and maintained in the
 following way. It is assumed that all PCDS projects are maintained on either
 the SLAC Github or the PCDS specific site. This workflow was not invented here
 at SLAC, there are many helpful tutorials online like `this
-<https://guides.github.com/introduction/flow>`_ if you want more information.
+<https://guides.github.com/introduction/flow>`__ if you want more information.
 
 Creating a Local Checkout
 =========================
-If you want to make changes to a repository the first step is to create your
+If you want to make changes to a repository, the first step is to create your
 own fork. This allows you to create feature branches without cluttering the
 main repository. It also assures that the main repository is only added to by
 Pull Request and review. Repositories can be forked from the GitHub site like
-`this <https://help.github.com/articles/fork-a-repo>`_. Once this repository is
+`this <https://help.github.com/articles/fork-a-repo>`__. Once this repository is
 created, you can clone into your own workspace.
 
 .. code:: sh
@@ -34,8 +34,8 @@ bug you would like to work on.
 Commit Guidelines
 =================
 Now you are ready to start working! Make changes to files and commit them to
-your new branch. We like to preface our commit messages with a descriptor code.
-This makes it easier for someone reviewing your commit history to see what you
+your new branch. We like to prefix our commit messages with a descriptor code.
+This makes it easier for someone reviewing the commit history to see what you
 have done.  These are borrowed from the `NumPy
 <https://docs.scipy.org/doc/numpy/dev/gitwash/development_workflow.html#writing-the-commit-message>`_
 development documentation.
@@ -55,10 +55,10 @@ REV   revert an earlier commit
 STY   style fix (whitespace, PEP8)
 TST   addition or modification of tests
 REL   related to releasing your package
-WIP   Commit that is a work in progress
+WIP   commit that is a work in progress
 ====  ===
 
-It is also helpful underneath classes and functions to write docstrings. These
+It is also helpful to write docstrings within classes and functions. These
 are later converted by Sphinx into HTML documentation. They also are a valuable
 tool for exploration of a codebase within an IPython terminal. Docstrings
 should follow the form described in the `NumPy documentation
@@ -69,20 +69,19 @@ Merging Changes
 Once you are happy with your code, ``push`` it back to your fork on GitHub.
 
 .. code:: sh
-   
+
    $ git push origin my-feature
 
 You should now be able to create a Pull Request back to the original
 repository. **You should never commit directly back to the original
 repository**. In fact, if you are creating a new repository it is possible to
 strictly disallow this by explicitly protecting certain branches from direct
-commits.The reason we feel strongly that Pull Requests are necessary because
-they:
+commits. We feel strongly that Pull Requests are necessary because they:
 
-1) Allows other collaborators to view the changes you made, and give feedback.
+1) Allow other collaborators to view the changes you made, and give feedback.
 2) Leave an easily understood explanation to why these changes are necessary.
 
-Once these changes are deemed acceptable to enter the main repository, they
+Once these changes are deemed acceptable to enter the main repository, the
 Pull Request can be merged.
 
 Syncing your Local Checkout
@@ -109,11 +108,11 @@ will grab the latest commits that were merged since we made our own fork
    $ git fetch upstream
 
 
-Ideally you haven't made any changes to your ``master`` branch. So you should be
-able to merge the latest ``master`` branch from the upstream repository without
-concern. All you need to do is to switch to your ``master`` branch, and pull in
-the changes from the upstream remote. It is usually a good idea to push any
-changes back to your fork as well.
+Ideally, you haven't made any changes to your ``master`` branch. So you should
+be able to merge the latest ``master`` branch from the upstream repository
+without concern. All you need to do is switch to your ``master`` branch and
+pull in the changes from the upstream remote. It is usually a good idea to push
+these changes back to your fork as well.
 
 .. code:: sh
 
@@ -122,12 +121,12 @@ changes back to your fork as well.
    $ git push origin master
 
 Finally, we need to update our feature-branch to have the new changes. Here we
-use a ``git rebase`` to take our local changes, remove them temporarily, pull
-the upstream changes into our branch, and then re-add our local changes on the
-tip of the commit history. This avoids extraneous merge commits that clog the
-commit history of the branch. A more in-depth discussion can be found `here
-<https://www.atlassian.com/git/tutorials/merging-vs-rebasing>`_. This process
-should look like this:
+use a ``git rebase`` to take our local changes. This will remove them
+temporarily, pull the upstream changes into our branch, and then re-add our
+local changes onto the tip of the commit history. This avoids extraneous merge
+commits that clog the commit history of the branch. A more in-depth discussion
+can be found `here <https://www.atlassian.com/git/tutorials/merging-vs-rebasing>`_.
+This process should look like this:
 
 .. code:: sh
 

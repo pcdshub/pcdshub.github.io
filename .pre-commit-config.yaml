@@ -1,0 +1,23 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v2.5.0
+    hooks:
+    -   id: no-commit-to-branch
+    -   id: trailing-whitespace
+    -   id: end-of-file-fixer
+    -   id: check-ast
+    -   id: check-case-conflict
+    -   id: check-json
+    -   id: check-merge-conflict
+    -   id: check-symlinks
+    -   id: check-xml
+    -   id: check-yaml
+        exclude: '^(conda-recipe/meta.yaml)$'
+
+-   repo: https://github.com/PyCQA/doc8
+    rev: 0.8.1rc3
+    hooks:
+    - id: doc8
+      args: ['--quiet']

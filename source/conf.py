@@ -40,7 +40,7 @@ extensions = ['sphinx.ext.autosectionlabel',
 # Setup for custom stylesheets
 def setup(app):
     # Make the tables in the motivation page not have scroll bars
-    app.add_stylesheet('custom.css')
+    app.add_css_file('custom.css')
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -177,6 +177,3 @@ texinfo_documents = [
      author, 'PCDS', 'One line description of project.',
      'Miscellaneous'),
 ]
-
-
-

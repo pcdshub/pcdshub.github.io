@@ -9,7 +9,7 @@ design goals:
 - Deployment and testing should be automated.
 - The open source community should be maximally leveraged.
 
-These design goals result in a matrix of github repositories and python
+These design goals result in a matrix of Github repositories and python
 modules that are individually understandable, but together obscure the
 bigger picture. The goal of this page is to explain at a high level how
 each application works and what each repository does.
@@ -42,7 +42,7 @@ Applications
 ============
 This section will list our applications and explain the motivations
 behind them, as well as their dependencies.
-This includes only repositories that are hosted on pcdshub with a
+This includes only repositories that are hosted on pcdshub and have a
 corresponding online documentation page.
 
 Hutch-specific Repositories
@@ -76,7 +76,7 @@ How it works  A version file e.g. ``mfxversion`` chooses a shared conda
               These coordinate the loading of shared services and provide
               hooks for the hutch-specific code.
 
-Dependencies  This may vary between hutches, but all hutches rely on
+Dependencies  These may vary between hutches, but all hutches rely on
               :ref:`hutch-python` as the launcher and configuration
               reader. All of these repositories were created from the
               ``hutch-python --create reponame`` template function.
@@ -104,7 +104,7 @@ How it works  A shared startup script is seeded with the contents of the
               then the ``beamline.py`` and ``experiments`` user code is
               invoked.
 
-Dependencies  This is used by the :ref:`Hutch-specific repositories` to 
+Dependencies  This is used by the :ref:`Hutch-specific repositories` to
 
               Relies on most of our modules:
 
@@ -135,7 +135,7 @@ Motivation    Help the user find which objects are in the beam, and which are
               software with the same purpose, this is extremely configurable
               and simple to keep up-to-date using :ref:`happi`.
 
-How it works  This uses the z-position and beamline metadate from :ref:`happi`
+How it works  This uses the z-position and beamline metadata from :ref:`happi`
               to sort devices by position along the beamline. It relies on the
               in/out interface from :ref:`pcdsdevices` to determine whether
               each device is in the beam.
@@ -152,8 +152,8 @@ Repository    `pmgr <https://github.com/pcdshub/pmgr>`_
 
 How we use it This is the Parameter Manager, ``pmgr`` for short. This isn't
               installed in an environment (yet), but is used as a stand-alone
-              GUI for keeping track of device parameters. It is used in the
-              old python cli for the same purpose, but this has yet to be
+              GUI for keeping track of device parameters. It was used in the
+              old python CLI for the same purpose, but this has yet to be
               ported.
 
 Motivation    We need a place to keep track of and restore parameters to ease
@@ -181,9 +181,9 @@ Motivation    We need to do this in a structured, semi-automated way to
               minimize upkeep and catch mistakes.
 
 How it works  ``packages.txt`` is updated to add new packages.
-              ``stage_release.sh`` is ran to build a new environment from the
-              packages list and push it to github. We make a PR and discuss.
-              Along with the PR, an automated test is ran to check that all
+              ``stage_release.sh`` is run to build a new environment from the
+              packages list and push it to Github. We make a PR and discuss.
+              Along with the PR, an automated test is run to check that all
               of our pcdshub modules pass their individual automated tests
               with the full environment (this also runs daily).
               If we like the new environment, we merge the PR and make a tag.
@@ -198,12 +198,12 @@ pcds-recipes
 ============= ================================================================
 Repository    `pcds-recipes <https://github.com/pcdshub/pcds-recipes>`_
 
-How we use it This is used to build non-pcdshub conda packages and make sure
+How we use it This is used to build non-pcdshub Conda packages and make sure
               they get into the pcds-tag channel.
 
-Motivation    It is unsustanable and unstable to rely on special channels for
+Motivation    It is unsustainable and unstable to rely on special channels for
               our conda environments. By limiting to the ``defaults``,
-              ``conda-forge``, and our own ``pcds-tag`` it becomes easy to
+              ``conda-forge``, and our own ``pcds-tag``, it becomes easy to
               specify our environment setups.
 
 How it works  Recipes are placed into the repository and ``build.py`` builds
@@ -220,12 +220,12 @@ behind them, as well as their dependencies.
 This includes only repositories that are hosted on pcdshub with a
 corresponding online documentation page.
 
-typhon
+typhos
 ------
 ============= ================================================================
-Repository    `typhon <https://github.com/pcdshub/typhon>`_
+Repository    `typhos <https://github.com/pcdshub/typhos>`_
 
-How we use it Automatically generate screens from ophyd devices.
+How we use it To automatically generate screens from :ref:`ophyd` devices.
 
 Motivation    We need new :ref:`pydm` screens and these are great starting
               points. The :ref:`ophyd` device structure is very useful for
@@ -243,15 +243,15 @@ pcdsdevices
 ============= ================================================================
 Repository    `pcdsdevices <https://github.com/pcdshub/pcdsdevices>`_
 
-How we use it To define :ref:`ophyd` device classes that correspond to lcls
-              pcds EPICS IOCs. This is also where we put additional logic and
-              cli niceties for interactive sessions with these devices.
+How we use it To define :ref:`ophyd` device classes that correspond to LCLS
+              PCDS EPICS IOCs. This is also where we put additional logic and
+              CLI niceties for interactive sessions with these devices.
 
 Motivation    There must be a common place where these classes are defined
               so that all of our ``Python`` applications share PV structures
               and logic for each identical device class or instance.
 
-How it works  Follow the :ref:`ophyd` rules to record which PVs are associated
+How it works  Follows the :ref:`ophyd` rules to record which PVs are associated
               with each device class.
 
 Dependencies  - :ref:`ophyd`
@@ -315,7 +315,7 @@ pcdsdaq
 Repository    `pcdsdaq <https://github.com/pcdshub/pcdsdaq>`_
 
 How we use it To define a :ref:`bluesky`-compatible control layer for the
-              LCLS1 data aquisition system (DAQ)
+              LCLS1 data acquisition system (DAQ).
 
 Motivation    We need to be able to control the DAQ. Doing it in a
               :ref:`bluesky`-compatible way means we can include the DAQ in
@@ -338,10 +338,10 @@ How we use it To store all of our device metadata in :ref:`device_config` and
               application.
 
 Motivation    There must be a canonical way to load devices, consistent
-              accross all of our python applications.
+              across all of our python applications.
 
 How it works  Defines container objects that represent real objects. These can
-              be stored in json or mongodb and be used to generate real
+              be stored in ``json`` or ``mongodb`` and be used to generate real
               objects.
 
 Dependencies  No pcdshub dependencies
@@ -356,9 +356,9 @@ How we use it As a central file store of all the :ref:`happi` device
               configuration information.
 
 Motivation    We need to store the information somewhere until we have a
-              mongodb set up.
+              ``mongodb`` set up.
 
-How it works  Stores a single json file.
+How it works  Stores a single ``json`` file.
 
 Dependencies  No pcdshub dependencies
 ============= ================================================================
@@ -371,9 +371,9 @@ Repository    `elog <https://github.com/pcdshub/elog>`_
 How we use it To post information to the experiment elog.
 
 Motivation    We need python bindings for this so that we can update the elog
-              programattically or through the command line.
+              programmatically or from the command line.
 
-How it works  https requests
+How it works  Through https requests
 
 Dependencies  No pcdshub dependencies
 ============= ================================================================
@@ -381,7 +381,7 @@ Dependencies  No pcdshub dependencies
 External Modules
 ================
 This section will list some of the more site-specific external modules we use
-and explain the motivations behind the modules and behind why we use them.
+and explain the motivations behind the modules and why we use them.
 
 bluesky
 -------
@@ -425,7 +425,7 @@ pydm
 ============= ================================================================
 Repository    `pydm <https://github.com/slaclab/pydm>`_
 
-How we use it ``pyqt``-based EPICS control screens.
+How we use it To create/display ``pyqt``-based EPICS control screens.
 
 Motivation    We need to be able to include ``Python`` logic in our screens
               for advanced applications, but we also need a way for new users
@@ -433,7 +433,7 @@ Motivation    We need to be able to include ``Python`` logic in our screens
 
 How it works  This leverages qt ``designer`` as a drag-and-drop interface. A
               rich ``Python`` API is provided for interacting with EPICS PVs
-              and with archiver data, among other things. Widgets are provided
+              and archiver data, among other things. Widgets are provided
               that correspond to the legacy EDM widgets.
 
 Dependencies  No pcdshub dependencies
