@@ -38,18 +38,18 @@ General Rules
 * Always use ``"""triple double quotes"""`` for docstrings.
 * End all summaries/descriptions with periods.
 * Built-in types (like str and int) should not be quoted or backticked.
-* Numeric values should be left unbackticked (e.g. 1).
-* Strings should be quoted (e.g. 'foo').
+* Numeric values should be left unbackticked (e.g. ``1``).
+* Strings should be quoted (e.g. ``'foo'``).
 * Built-in constants and keywords can be emphasized with backticks. An
   appropriate reference to python docs with be automatically generated
-  (e.g. \`True\` or \`assert\`).
-* args and kwargs should be noted without asterisks (e.g. kwargs not
-  \*\*kwargs).
+  (e.g. ```True``` or ```assert```).
+* args and kwargs should be noted without asterisks (e.g. ``kwargs`` not
+  ``**kwargs``).
 * Please use single backticks around all class/function/module/attribute names
   so that the appropriate documentation can be properly cross-referenced.
-  Please check that the link is made properly. In some cases, you may have to
+  Please check that the link is made properly. In some cases, you may need to
   specify the role manually (e.g. ``:meth:`__init__```) and/or include the
-  parent ```InOutPositioner.remove```.
+  parent (e.g. ```InOutPositioner.remove```).
 
 Module Rules
 ------------
@@ -138,9 +138,11 @@ Some PCDS-specific rules for these docstrings:
 * Class parameters should be described in the class's docstring under the
   Parameters section. Therefore, the :meth:`__init__` method can be blank.
 
-Please note: In list sections, the colon must be preceded by a space, or
-omitted if the type is absent. Also, the type should not be backticked, even if
-it's a custom object; the reference will be made anyway.
+.. note::
+    In listed sections like Parameters or Attributes, the colon must be
+    preceded by a space, or omitted if the type is absent. Also, the type
+    should not be backticked, even if it's a custom object; the reference will
+    be made anyway.
 
 .. code::
 
@@ -169,7 +171,7 @@ Extra Notes
 * Inline code blocks can be specified with double-backticks
   (e.g. ````return 0````).
 * Treat PV names as strings, surrounding them with single-quotes
-  (e.g. 'CXI:JET:X').
+  (e.g. ``'CXI:JET:X'``).
 * Capitalize the first letter of a parameter's description.
 * Prepending a backticked dotted name with a tilde(~) will display only the
   lowest-level of the name, while still using the full name for the
@@ -179,10 +181,10 @@ Extra Notes
 External Guides
 ===============
 * `PEP-8 <https://www.python.org/dev/peps/pep-0008>`_ -- Official Style Guide for Python Code
-* `Example Project <https://pythonhosted.org/an_example_pypi_project/sphinx.html>`_ -- Some useful examples
 * `PEP-257 <https://www.python.org/dev/peps/pep-0257>`_ -- Official conventions for Python docstrings
 * `numpydoc <https://numpydoc.readthedocs.io/en/latest/format.html>`_ -- Useful for rules about sections
 * `sphinx <http://www.sphinx-doc.org/en/master/usage/restructuredtext/domains.html#the-python-domain>`_ -- Generally helpful for working with sphinx directives
+* `Example Project <https://pythonhosted.org/an_example_pypi_project/sphinx.html>`_ -- Some useful examples
 
 Acknowledgements
 ================
