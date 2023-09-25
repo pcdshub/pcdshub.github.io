@@ -37,7 +37,7 @@ Now you are ready to start working! Make changes to files and commit them to
 your new branch. We like to prefix our commit messages with a descriptor code.
 This makes it easier for someone reviewing the commit history to see what you
 have done.  These are borrowed from the `NumPy
-<https://docs.scipy.org/doc/numpy/dev/gitwash/development_workflow.html#writing-the-commit-message>`_
+<https://numpy.org/doc/stable/dev/development_workflow.html#writing-the-commit-message>`_
 development documentation.
 
 ====  ===
@@ -62,7 +62,7 @@ It is also helpful to write docstrings within classes and functions. These
 are later converted by Sphinx into HTML documentation. They also are a valuable
 tool for exploration of a codebase within an IPython terminal. Docstrings
 should follow the form described in the `NumPy documentation
-<http://www.sphinx-doc.org/en/stable/ext/example_numpy.html>`_
+<https://www.sphinx-doc.org/en/master/usage/extensions/example_numpy.html>`_
 
 Merging Changes
 ===============
