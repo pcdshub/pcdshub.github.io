@@ -28,3 +28,4 @@ to PCDS directly.
 
    SLAC-wide GitHub <https://github.com/slaclab>
    PCDS GitHub <https://github.com/pcdshub>
+   SLAC EPICS GitHub <https://github.com/slac-epics>
